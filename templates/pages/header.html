@@ -1,0 +1,43 @@
+{% load static %}
+<header class="bg--primary--color">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="me-1" />
+        <a href="{% url 'pages:homepage' %}" class="navbar-brand text-uppercase">Play2Learn</a>
+        <button class="navbar-toggler" type="button" 
+          data-bs-toggle="collapse" data-bs-target="#navbarText">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+            <ul class="navbar-nav mr-auto text-right">
+                <li class="nav-item m-1 active">
+                    <a href="{% url 'pages:homepage' %}" class="nav-link btn--nav text-uppercase">Home</a>
+                </li>
+
+                <li class="nav-item m-1 dropdown">
+                  <button class="nav-link dropdown-toggle btn--nav text-uppercase bg--primary--color" 
+                  type="button"    data-bs-toggle="dropdown" aria-expanded="false">
+                    Games
+                  </button>
+                  <ul class="dropdown-menu bg--primary--color">
+                    <li>
+                        <a href="{% url 'games:anagram-hunt' %}" class="dropdown-item text-white dd--game text-uppercase ">Anagram Hunt</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'games:math-facts' %}" class="dropdown-item text-white dd--game text-uppercase
+                        ">Math Facts Practice</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item m-1">
+                    <a href="{% url 'pages:about' %}" class="nav-link btn--nav text-uppercase">About</a>
+                </li>
+                <li class="nav-item m-1">
+                    <a href="#" class="btn btn--raised btn-outline-light text-uppercase">Login</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+</header>

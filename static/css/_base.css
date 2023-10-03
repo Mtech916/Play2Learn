@@ -80,6 +80,9 @@ input, textarea, button, select {
   width: 100%;
 }
 
+.dd--game:hover {
+  background-color: var(--primary);
+}
 
 @media (min-width: 1000px) {
   .btn--nav {

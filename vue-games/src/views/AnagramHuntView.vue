@@ -1,20 +1,13 @@
 <template>
   <h1 id="game-heading" class="row justify-content-center py-5">Anagram Hunt</h1>
-  <p>The place to play with words</p>
-  <!-- <AnagramConfig v-if="!gameStarted" @start-game="startGame" />
+
+  <AnagramConfig v-if="!gameStarted" @start-game="startGame" />
   <AnagramGamePlay v-else-if="gameStarted && !gameOver" :wordLength="wordLength" @end-game="onEndGame" @update-score="updateScore"/>
-  <AnagramGameOver v-else :score="score" @restart-game="restartGame" @back-to-config="backToConfig" /> -->
+  <AnagramGameOver v-else :score="score" @restart-game="restartGame" @back-to-config="backToConfig" />
 
 </template>
 
 <script>
-  export default {
-    name: 'AnagramHuntView',
-  }
-</script>
-
-
-<!-- <script>
 
 import AnagramConfig from '../components/anagram-hunt/AnagramConfig.vue';
 import AnagramGamePlay from '../components/anagram-hunt/AnagramGamePlay.vue';
@@ -61,4 +54,4 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
       },
     }
   }
-</script> -->
+</script>

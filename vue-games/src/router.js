@@ -4,6 +4,8 @@ import AboutView from './views/AboutView.vue';
 import AnagramHuntView from './views/AnagramHuntView.vue';
 import HomeView from './views/HomeView.vue';
 import MathFactsView from './views/MathFactsView.vue';
+import GameConfig from './components/math-facts-practice/GameConfig.vue';
+import GamePlay from './components/math-facts-practice/GamePlay.vue';
 
 const routes = [
     {
@@ -24,7 +26,22 @@ const routes = [
     {
         path: '/games/math-facts',
         name: 'MathFactsView',
-        component: MathFactsView
+        component: MathFactsView,
+        children: [
+            {
+                path: '',
+                component: GameConfig,
+            },
+            {
+                path: '/play',
+                name: 'GamePlay',
+                component: GamePlay,
+                props: (route) => ({
+                    operation: route.query.operation,
+                    maxNumber: route.query.maxNumber
+                }),
+            },
+        ],
     },
 ]
 

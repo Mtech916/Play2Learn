@@ -86,6 +86,7 @@
     },
     data() {
       return {
+        userName: '',
         buttons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
         input: '',
         operands: { num1: '1', num2: '1' },
@@ -196,6 +197,17 @@
           this.setInput(e.key);
         }
       },
+    },
+    async recordScore() {
+      const data = {
+        'user-name': this.userName,
+        'score': this.score,
+        'game': 'MATH'
+      };
+
+      const response = (await this.axios.post('/record-score/', data)).data;
+
+      console.log(reponse);
     },
     mounted() {
       this.newQuestion();

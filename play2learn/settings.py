@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Local Apps
+    "common.apps.CommonConfig",
     "games.apps.GamesConfig",
     "pages.apps.PagesConfig",
     "users.apps.UsersConfig",

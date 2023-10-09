@@ -9,6 +9,8 @@ import router from './router';
 
 import App from './App.vue';
 
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 const app = createApp(App);
 
 app.use(router);

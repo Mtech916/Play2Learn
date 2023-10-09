@@ -207,7 +207,7 @@
 
       const response = (await this.axios.post('/record-score/', data)).data;
 
-      console.log(reponse);
+      console.log(response);
     },
     mounted() {
       this.newQuestion();

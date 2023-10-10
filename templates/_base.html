@@ -48,35 +48,49 @@
                                             ">Math Facts Practice</a>
                                         </li>
                                         <li>
+                                            <a href="{% url 'games:game-scores' %}" class="dropdown-item text-white dd--game text-uppercase">
+                                                Leaderboard
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="{% url 'pages:about' %}" class="dropdown-item text-white dd--game text-uppercase">About</a>
                                         </li>
                                     </ul>
                                     </li>
                     
-                                    <li class="nav-item m-1">
-                                        <a href="{% url 'games:game-scores' %}" class="nav-link btn--nav text-uppercase">Leaderboard</a>
-                                    </li>
-                                {% if not user.is_authenticated %}
+                                    
+                                    {% if not user.is_authenticated %}
                                     <li class="nav-item m-1">
                                         <a href="{% url 'account_login' %}" class="btn btn--raised btn-outline-light text-uppercase">Login</a>
                                     </li>
                                     <li class="nav-item m-1">
                                         <a href="{% url 'account_signup' %}" class="btn btn--raised btn-outline-light text-uppercase">Sign Up</a>
                                     </li>
-                                {% else %}
+                                    {% else %}
                                     <li class="nav-item m-1 dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="nav-link dropdown-toggle btn--nav text-uppercase bg--primary--color" 
+                                        type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Me
-                                        </a>
-                                        <a href="#" class="dropdown-item">My Account</a>
-                                        <a href="{% url 'games:game-scores' %}" class="dropdown-item">Game Scores</a>
-                                        <a href="#" class="dropdown-item">My Reviews</a>
-                                        <div class="dropdown-divider"></div>
-                                        <form method="post" action="{% url 'account_logout' %}">
-                                            {% csrf_token %}
-                                            <button class="btn dropdown-item">Log Out</button>
-                                        </form>
-                                    </li>
+                                        </button>
+                                        <ul class="dropdown-menu bg--primary--color">
+                                            <li>
+                                                <a href="#" class="dropdown-item text-white dd--game text-uppercase ">My Account</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'games:game-scores' %}" class="dropdown-item text-white dd--game text-uppercase
+                                                ">Game Scores</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown-item text-white dd--game text-uppercase">My Reviews</a>
+                                            </li>
+                                            <div class="dropdown-divider"></div>
+                                            <li>
+                                                <form method="post" action="{% url 'account_logout' %}">
+                                                    {% csrf_token %}
+                                                    <button class="btn dropdown-item text-white dd--game text-uppercase">Log Out</button>
+                                                </form>
+                                            </li>
+                                        </ul>
                                 {% endif %}
                                 </ul>
                             </div>

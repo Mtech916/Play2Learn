@@ -4,20 +4,24 @@
 {% block title %}Confirm Registration{% endblock %}
 
 {% block main %}
-<div class="card border-primary m-auto mb-3" style="max-width: 30rem">
-  <div class="card-header text-center">Confirm Registration</div>
-  <div class="card-body">
+<div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 30rem">
+  <div class="card-header text-center fw-bold mb-2 text-uppercase">
+    Confirm Registration
+  </div>
+  <div class="card-body p-5">
     {% if confirmation %}
       <p class="card-text text-center">Please confirm your registration.</p>
       <form method="post"
         action="{% url 'account_confirm_email' confirmation.key %}">
         {% csrf_token %}
-        <button class="form-control btn btn-primary">CONFIRM</button>
+        <button class="form-control btn btn-outline-light btn-lg btn--raised rounded-3">CONFIRM</button>
       </form>
     {% else %}
       <p class="card-text">
         This confirmation link has expired or is invalid. Please try
-        <a href="{% url 'account_email' %}">logging in again</a>.
+        <a href="{% url 'account_email' %}" class="text-white-50 fw-bold">
+          logging in again
+        </a>.
         You will be sent a new confirmation link.
       </p>
     {% endif %}

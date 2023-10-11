@@ -6,7 +6,7 @@
 {% block main %}
 <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 30rem">
   <div class="card-header text-center fw-bold mb-2 text-uppercase">Log in</div>
-  <div class="card-body p-5">
+  <div class="card-body">
     <form method="post" class="form-outline form-white mb-4">
       {% csrf_token %}
       {{ form|crispy }}
@@ -16,7 +16,8 @@
   <div class="card-footer">
     <p class="mb-0">
       Need an account?
-      <a href="{% url 'account_signup' %}" class="text-white-50 fw-bold"
+      <a href="{% url 'account_signup' %}" class="text-white-50 fw-bold">
+        Register
       </a><br>
       Lost your password?
       <a href="{% url 'account_reset_password' %}" class="text-white-50 fw-bold">

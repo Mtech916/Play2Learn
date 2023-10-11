@@ -4,11 +4,11 @@
 {% block title %}My Account{% endblock title %}
 
 {% block main %}
-<div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 30rem">
+<div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
   <div class="card-header text-center fw-bold mb-2 text-uppercase">
     My Account
   </div>
-  <div class="card-body p-5">
+  <div class="card-body">
     <form method="post" class="form-outline form-white mb-4">
       {% csrf_token %}
       {{ form|crispy }}

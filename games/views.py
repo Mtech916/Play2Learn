@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.views.generic import DetailView, ListView, TemplateView
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView, DetailView, ListView, TemplateView
 
 import json
 from django.http import JsonResponse
@@ -23,6 +24,11 @@ class GameScoreView(ListView):
             "-score"
         )
         return context
+
+
+class GameScoreDeleteView(DeleteView):
+    model = GameScore
+    success_url = reverse_lazy("games:game-scores")
 
 
 class GameScoreDetailView(DetailView):

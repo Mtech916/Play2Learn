@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+
+{% block title %}Score Details{% endblock %}
+{% block main %}
+  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
+    <form method="post">
+        {% csrf_token %}
+        <p><strong>Are you sure you want to delete this {{ gamescore.game }} score?</strong></p>
+      <p>{{ gamescore.score }}</p>
+      <button class="btn btn-outline-light btn-lg btn--raised rounded-3 form-control">Confirm</button>
+    </form>
+    </form>
+  </div>
+{% endblock %}

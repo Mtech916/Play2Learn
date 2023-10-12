@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}Score Details{% endblock %}
+{% block main %}
+  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
+    <div class="card-header text-center fw-bold mb-2 text-uppercase">
+        {{ gamescore.game }}
+    </div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">{{ gamescore.score }}</h5>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">
+        Created on: {{ gamescore.created }} By: {{ gamescore.user.username }}
+      </small>
+    </div>
+  </div>
+{% endblock %}

@@ -1,4 +1,5 @@
-from django.views.generic import ListView, TemplateView
+from django.contrib.auth.decorators import login_required
+from django.views.generic import DetailView, ListView, TemplateView
 
 import json
 from django.http import JsonResponse
@@ -24,6 +25,11 @@ class GameScoreView(ListView):
         return context
 
 
+class GameScoreDetailView(DetailView):
+    model = GameScore
+    template_name = "games/game-score-detail.html"
+
+
 class MathFactsView(TemplateView):
     template_name = "games/math-facts.html"
 
@@ -32,14 +38,15 @@ class MathFactsPlayView(MathFactsView):
     template_name = "games/math-facts-play.html"
 
 
+@login_required
 def record_score(request):
     data = json.loads(request.body)
 
-    user_name = data["user-name"]
+    user = request.user
     game = data["game"]
     score = data["score"]
 
-    new_score = GameScore(user_name=user_name, game=game, score=score)
+    new_score = GameScore(user=user, game=game, score=score)
     new_score.save()
 
     response = {"success": True}

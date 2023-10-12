@@ -86,7 +86,6 @@
     },
     data() {
       return {
-        userName: '',
         buttons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
         input: '',
         operands: { num1: '1', num2: '1' },
@@ -102,9 +101,8 @@
     },
     methods: {
     config() {
-      this.$router.push('/math-facts');
+      this.$router.push('/games/math-facts/');
     },
-    // this setInput might be useful lesson 4 chptr 11
     setInput(value) {
       this.input += String(value);
       this.input = String(Number(this.input));
@@ -197,17 +195,16 @@
           this.setInput(e.key);
         }
       },
-    },
-    async recordScore() {
-      const data = {
-        'user-name': this.userName,
-        'score': this.score,
-        'game': 'MATH'
-      };
-
-      const response = (await this.axios.post('/record-score/', data)).data;
-
-      console.log(response);
+      async recordScore() {
+        const data = {
+          'score': this.score,
+          'game': 'MATH'
+        };
+        
+        const response = (await this.axios.post('/games/record-score/', data)).data;
+        
+        console.log(response);
+      },
     },
     mounted() {
       this.newQuestion();
@@ -227,6 +224,13 @@
           return 'row text-secondary my-2';
         }
       },
+    },
+    watch: {
+      timeLeft(newTimeLeft) {
+        if (newTimeLeft === 0) {
+          this.recordScore();
+        }
+      }
     },
   };
   

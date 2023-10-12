@@ -54,6 +54,7 @@ export default {
   methods: {
     play() {
       this.$router.push({
+        path: '/math-facts/play',
         name: 'GamePlay',
         query: {
           operation: this.operation,

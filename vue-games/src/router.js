@@ -30,6 +30,7 @@ const routes = [
         children: [
             {
                 path: '',
+                name: 'GameConfig',
                 component: GameConfig,
             },
             {

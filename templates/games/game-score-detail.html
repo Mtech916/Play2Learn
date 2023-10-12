@@ -8,6 +8,11 @@
     </div>
     <div class="card-body text-primary">
       <h5 class="card-title">{{ gamescore.score }}</h5>
+      {% if gamescore.user == user %}
+        <a href="{% url 'games:delete' gamescore.pk %}" class="btn btn-danger btn-sm float-end me-2">
+            <i class="far fa-trash-alt"></i>
+        </a>
+      {% endif %}
     </div>
     <div class="card-footer">
       <small class="text-muted">

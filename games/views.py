@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView, DetailView, ListView, TemplateView
 
@@ -26,12 +27,16 @@ class GameScoreView(ListView):
         return context
 
 
-class GameScoreDeleteView(DeleteView):
+class GameScoreDeleteView(UserPassesTestMixin, DeleteView):
     model = GameScore
     success_url = reverse_lazy("games:game-scores")
 
+    def test_func(self):
+        obj = self.get_object()
+        return self.request.user == obj.user
 
-class GameScoreDetailView(DetailView):
+
+class GameScoreDetailView(LoginRequiredMixin, DetailView):
     model = GameScore
     template_name = "games/game-score-detail.html"
 

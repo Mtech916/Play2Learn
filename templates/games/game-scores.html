@@ -13,10 +13,12 @@
                 {% for score in math_scores %}
                 <li>
                     Score: 
-                    <a href="{{ score.get_absolute_url }}">{{ score.score }}</a> 
+                    <a href="{{ score.get_absolute_url }}">{{ score.score }}</a> <br>
+                    {% if score.user == user %}
                     <a href="{% url 'games:delete' score.pk %}" class="btn btn-danger btn-sm float-end me-2">
                         <i class="far fa-trash-alt"></i>
                     </a><br>
+                    {% endif %}
                     <small class="text-muted">
                         Created on: {{ score.created }} By: {{ score.user.username }}
                     </small>
@@ -35,10 +37,12 @@
                 {% for score in anagram_scores %}
                 <li>
                     Score: 
-                    <a href="{{ score.get_absolute_url }}">{{ score.score }}</a>
+                    <a href="{{ score.get_absolute_url }}">{{ score.score }}</a> <br>
+                    {% if score.user == user %}
                     <a href="{% url 'games:delete' score.pk %}" class="btn btn-danger btn-sm float-end me-2">
                         <i class="far fa-trash-alt"></i>
                     </a><br>
+                    {% endif %}
                     <small class="text-muted">
                         Created on: {{ score.created }} By: {{ score.user.username }}
                     </small>

@@ -87,6 +87,7 @@ import anagrams from '@/data/anagrams.js';
       fetchNewAnagrams() {
         if (this.selectedAnagrams.length === 0) {
           this.selectedAnagrams = [];
+          this.recordScore();
           this.endGame();
         } else if (this.currentAnagrams.length === 0) {
           this.currentAnagrams = this.selectedAnagrams.shift();
@@ -109,12 +110,29 @@ import anagrams from '@/data/anagrams.js';
           }
         }
       },
+      async recordScore() {
+        const data = {
+          'score': this.score,
+          'game': 'ANAGRAM'
+        };
+        
+        const response = (await this.axios.post('/games/record-score/', data)).data;
+        
+        console.log(response);
+      },
     },
     beforeMount() {
       this.selectedAnagrams = [...anagrams[this.wordLength]];
     },
     mounted() {
       this.startGame();
+    },
+    watch: {
+      timeLeft(newTimeLeft) {
+        if (newTimeLeft === 0) {
+          this.recordScore();
+        }
+      }
     },
   }
 </script>

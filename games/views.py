@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
@@ -30,6 +31,14 @@ class GameScoreView(ListView):
 class GameScoreDeleteView(UserPassesTestMixin, DeleteView):
     model = GameScore
     success_url = reverse_lazy("games:game-scores")
+
+    def delete(self, request, *args, **kwargs):
+        result = super().delete(request, *args, **kwargs)
+        return result
+
+    def form_valid(self, form):
+        messages.success(self.request, "Score deleted")
+        return super().form_valid(form)
 
     def test_func(self):
         obj = self.get_object()

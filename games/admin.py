@@ -10,6 +10,6 @@ class GameScoreAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if obj:
-            return "created"
+            return ("slug", "created")
 
         return ()

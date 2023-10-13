@@ -15,7 +15,7 @@
                     Score: 
                     <a href="{{ score.get_absolute_url }}">{{ score.score }}</a>
                     {% if score.user == user %}
-                    <a href="{% url 'games:delete' score.pk %}" class="btn btn-danger btn-sm float-end me-2">
+                    <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
                         <i class="far fa-trash-alt"></i>
                     </a>
                     {% endif %}
@@ -40,7 +40,7 @@
                     Score: 
                     <a href="{{ score.get_absolute_url }}">{{ score.score }}</a> 
                     {% if score.user == user %}
-                    <a href="{% url 'games:delete' score.pk %}" class="btn btn-danger btn-sm float-end me-2">
+                    <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
                         <i class="far fa-trash-alt"></i>
                     </a>
                     {% endif %}

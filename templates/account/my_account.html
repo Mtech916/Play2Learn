@@ -9,7 +9,10 @@
     My Account
   </div>
   <div class="card-body">
-    <form method="post" class="form-outline form-white mb-4">
+    {% if user.avatar and not form.avatar.errors %}
+      <img src="{{ user.avatar.url }}" alt="Avatar" class="img-thumbnail mx-auto d-block" />
+    {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form-outline form-white mb-4" novalidate>
       {% csrf_token %}
       {{ form|crispy }}
       <button class="form-control btn btn-outline-light btn-lg btn--raised rounded-3">UPDATE</button>

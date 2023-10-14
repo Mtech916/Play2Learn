@@ -16,6 +16,10 @@
     </div>
     <div class="card-footer">
       <small class="text-muted">
+        {% if gamescore.user.avatar %}
+          <img src="{{ gamescore.user.avatar.url }}" alt="{{ gamescore.user.username }}"
+            class="mt-1 rounded float-start" width="50" height="50">
+        {% endif %}
         Created on: {{ gamescore.created }} By: {{ gamescore.user.username }}
       </small>
     </div>

@@ -22,7 +22,7 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = get_user_model()
-        fields = ("email", "username", "first_name", "last_name", "dob")
+        fields = ("email", "username", "first_name", "last_name", "dob", "avatar")
         widgets = {
             "dob": forms.SelectDateWidget(
                 attrs={"style": "width: 25%; display: inline-flex; margin: 0 1%"},

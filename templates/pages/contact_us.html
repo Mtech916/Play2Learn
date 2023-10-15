@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+{% block main %}
+    <h2 class="text-center"></h2>
+    <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 p-3" style="max-width: 40rem">
+        <div class="card-header text-center fw-bold mb-2 text-uppercase">Contact Us</div>
+        <small class="m-0 p-2">
+            How can we help?
+        </small>
+        <form method="post" class="form-outline form-white mb-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-light btn-lg btn--raised rounded-3 float-end">Send</button>
+        </form>
+    </div>
+{% endblock %}

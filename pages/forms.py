@@ -9,8 +9,8 @@ class ContactUsForm(forms.Form):
         ("request", "Feature Request"),
         ("other", "Not Listed"),
     )
-    first_name = forms.CharField()
+    first_name = forms.CharField(widget=forms.TextInput(attrs={"autofocus": True}))
     last_name = forms.CharField()
     subject = forms.ChoiceField(choices=EMAIL_TOPIC)
     email = forms.EmailField()
-    message = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea(attrs={"cols": "75", "rows": "5"}))

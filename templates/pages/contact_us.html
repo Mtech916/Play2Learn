@@ -1,16 +1,30 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Contact Us{% endblock %}
 {% block main %}
     <h2 class="text-center"></h2>
     <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 p-3" style="max-width: 40rem">
         <div class="card-header text-center fw-bold mb-2 text-uppercase">Contact Us</div>
-        <small class="m-0 p-2">
-            How can we help?
-        </small>
-        <form method="post" class="form-outline form-white mb-4">
-        {% csrf_token %}
-        {{ form.as_p }}
+        <form method="post" class="form-outline form-white mb-4" novalidate>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-0">
+                    {{ form.first_name|as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-0">
+                    {{ form.last_name|as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-0">
+                    {{ form.email|as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-0">
+                    {{ form.subject|as_crispy_field }}
+                </div>
+            </div>
+            {{ form.message|as_crispy_field }}
         <button class="btn btn-outline-light btn-lg btn--raised rounded-3 float-end">Send</button>
         </form>
     </div>

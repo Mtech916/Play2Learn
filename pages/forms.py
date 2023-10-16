@@ -1,7 +1,9 @@
 from django import forms
 
+from .models import ContactUs
 
-class ContactUsForm(forms.Form):
+
+class ContactUsForm(forms.ModelForm):
     EMAIL_TOPIC = (
         (None, "--Please Choose--"),
         ("general", "General Question"),
@@ -9,8 +11,19 @@ class ContactUsForm(forms.Form):
         ("request", "Feature Request"),
         ("other", "Not Listed"),
     )
-    first_name = forms.CharField(widget=forms.TextInput(attrs={"autofocus": True}))
-    last_name = forms.CharField()
+
     subject = forms.ChoiceField(choices=EMAIL_TOPIC)
-    email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea(attrs={"cols": "75", "rows": "5"}))
+
+    class Meta:
+        model = ContactUs
+        fields = (
+            "first_name",
+            "last_name",
+            "subject",
+            "email",
+            "message",
+        )
+        widgets = {
+            "first_name": forms.TextInput(attrs={"autofocus": True}),
+            "message": forms.Textarea(attrs={"cols": "75", "rows": "5"}),
+        }

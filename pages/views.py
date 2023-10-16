@@ -1,20 +1,22 @@
 import html
 from django.urls import reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic import CreateView, TemplateView
 
 from common.utils.email import send_email
+
+from .models import ContactUs
 from .forms import ContactUsForm
 
 
-class ContactUsPageView(FormView):
-    template_name = "pages/contact_us.html"
+class ContactUsPageView(CreateView):
+    model = ContactUs
     form_class = ContactUsForm
     success_url = reverse_lazy("pages:thanks")
 
     def form_valid(self, form):
         data = form.cleaned_data
         to = "agenthiggins@gmail.com"
-        subject = "Your message has been received"
+        subject = "Website Visitor Message"
         content = f"""<p>Attention Play2Learn Admin!</p>
                 <p>Website visitor contact message received:</p>
                 <ol>"""

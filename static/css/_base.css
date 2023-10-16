@@ -1,14 +1,20 @@
 :root {
   /* Colors (FIXED) */
-  --primary: #eb5e28;
-  --gunmetal-grey: #465362;
+  --primary: #DC143C;
+  --gunmetal-grey: #708090;
   --black: #051923;
   --gray: #33415c;
   --beige: #979dac;
   --quotes: #3da5d9;
 
+  /* Previously used colors */
+  /* Above - --primary: #eb5e28; */
+/* Above - --gunmetal-grey: #465362; */
+/* html - color: var(--text-color); */
+
   /* Colors (THEME-DEPENDANT */
   --text-color: white;
+  --text-beige: #F5F5DC;
   --light-icon: white;
   --gray-light: #bdbdbd;
   --anchor-color: var(--primary);
@@ -22,7 +28,7 @@
 
 
 html {
-  color: var(--text-color);           /* or use --black */
+  color: var(--text-beige);           /* or use --black */
 }
 
 body {
@@ -30,13 +36,17 @@ body {
   overflow: auto;
   padding-bottom: 50px;
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1));
+  /* background: -webkit-linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1)); */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1));
-  color: var(--text-color);           /* or use --black */
+  /* background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1)); */
+  /* background: radial-gradient(circle at center, var(--gunmetal-grey), #465362, LightBlue, var(--text-beige)); */
+
+  background: linear-gradient(to right, var(--gunmetal-grey), #465362, LightBlue, var(--text-beige));
+
+  color: var(--text-beige);           /* or use --black */
 }
 
-input, textarea, button, select {
+a, input, textarea, button, select {
   font-family: 'Fira Code', monospace;
 }
 
@@ -45,12 +55,12 @@ input, textarea, button, select {
 }
 
 .special--border {
-  box-shadow: inset 0 -2px 3px 5px var(--text-color);
+  box-shadow: inset 0 -2px 3px 5px var(--text-beige);
 }
 
 .bg--quotes {
   background-color: rgba(70, 83, 98, 0.3);
-  box-shadow: inset 0 -2px 3px 3px var(--text-color);
+  box-shadow: inset 0 -2px 3px 3px var(--text-beige);
 }
 
 .btn--raised {
@@ -74,9 +84,9 @@ input, textarea, button, select {
 
 .btn--line {
   background-color: var(--primary);
-  color: var(--text-color);
+  color: var(--text-beige);
   padding: 12px;
-  box-shadow: 1px 0 6px 3px var(--text-color);
+  box-shadow: 1px 0 6px 3px var(--text-beige);
   border-radius: 3px;
 }
 
@@ -84,7 +94,7 @@ input, textarea, button, select {
   content: "";
   box-sizing: border-box;
   display: inline-block;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--text-beige);
   height: 4px;
   width: 100%;
 }

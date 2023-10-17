@@ -133,6 +133,13 @@ a, input, textarea, button, select {
   color: darkred;
 }
 
+a.link-color {
+  color: lightgoldenrodyellow;
+}
+a.trash-color {
+  color: var(--primary);
+}
+
 @media (min-width: 1000px) {
   .btn--nav {
     color: #fff;

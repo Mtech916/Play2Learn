@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+{% block title %}Game Review Details{% endblock %}
+{% block main %}
+    <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
+        <div class="card-header text-center fw-bold mb-2 text-uppercase">
+            Review Card
+        </div>
+        <div class="card-body text-primary">
+            <h5 class="card-title">{{ gamereview.game }}</h5>
+            <p class="text-center">
+                {{ gamereview.review }}
+            </p>
+            {% if gamereview.user == user %}
+                <a href="#" class="btn btn-danger btn-sm float-end me-2">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+            {% endif %}
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">
+                {% if gamereview.user.avatar %}
+                <img src="{{ gamereview.user.avatar.url }}" alt="{{ gamereview.user.username }}" class="mt-1 rounded float-start" width="50" height="50">
+                {% endif %}
+                Created on: {{ gamereview.created }} By: {{ gamereview.user.username }}
+            </small>
+        </div>
+    </div>
+{% endblock %}

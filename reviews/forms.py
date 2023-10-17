@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth import get_user_model
 
 from .models import GameReview
 
@@ -9,7 +10,7 @@ class GameReviewForm(forms.ModelForm):
         ("MATH", "Math Facts Practice"),
     ]
 
-    game = forms.TextField(choices=GAME_CHOICES)
+    game = forms.ChoiceField(choices=GAME_CHOICES)
 
     class Meta:
         model = GameReview
@@ -19,4 +20,7 @@ class GameReviewForm(forms.ModelForm):
         )
         widgets = {
             "review": forms.Textarea(attrs={"cols": "75", "rows": "5"}),
+        }
+        help_texts = {
+            "review": "Tell us how much fun you had. The most exciting reviews will be featured on our website!",
         }

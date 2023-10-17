@@ -7,12 +7,15 @@ from common.utils.text import unique_slug
 
 class GameReview(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    game = models.CharTextField(max_length=20)
+    game = models.CharField(max_length=20)
     review = models.TextField()
     is_featured = models.BooleanField(default=False)
     slug = models.SlugField(max_length=50, unique=True, null=False, editable=False)
     created = models.DateField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("reviews:update", args=[self.slug])
 
     def save(self, *args, **kwargs):
         if not self.slug:

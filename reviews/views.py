@@ -18,9 +18,10 @@ from .models import GameReview
 from .forms import GameReviewForm
 
 
-class GameReviewPageView(LoginRequiredMixin, CreateView):
+class GameReviewPageView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = GameReview
     form_class = GameReviewForm
+    success_message = "Game Review Submitted Successfully"
     success_url = reverse_lazy("reviews:thanks")
 
     def form_valid(self, form):

@@ -1,6 +1,7 @@
 import html
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from common.utils.email import send_email
 
@@ -8,9 +9,10 @@ from .models import ContactUs
 from .forms import ContactUsForm
 
 
-class ContactUsPageView(CreateView):
+class ContactUsPageView(SuccessMessageMixin, CreateView):
     model = ContactUs
     form_class = ContactUsForm
+    success_message = "Your message successfully sent"
     success_url = reverse_lazy("pages:thanks")
 
     def form_valid(self, form):

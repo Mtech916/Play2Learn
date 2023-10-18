@@ -4,7 +4,7 @@
 {% block main %}
   <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 30rem">
     <div class="card-header text-center fw-bold mb-2 text-uppercase">
-        {{ gamescore.game }}
+        {{ gamescore.get_game_display }}
     </div>
     <div class="card-body text-primary">
       <h5 class="card-title text-center text--color">{{ gamescore.score }}</h5>

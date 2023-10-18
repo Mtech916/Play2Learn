@@ -18,7 +18,7 @@ urlpatterns = [
     path(
         "game-reviews/<slug>/",
         GameReviewsDetailView.as_view(),
-        name="game-review-details",
+        name="details",
     ),
     path("", ReviewsPageView.as_view(), name="reviews"),
 ]

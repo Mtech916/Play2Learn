@@ -16,6 +16,7 @@ class GameReviewForm(forms.ModelForm):
         model = GameReview
         fields = (
             "game",
+            "rating",
             "review",
         )
         widgets = {

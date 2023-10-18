@@ -14,7 +14,9 @@
 
   /* Colors (THEME-DEPENDANT */
   --text-color: white;
-  --text-beige: #F5F5DC;
+  --text-hover: rgb(230, 230, 180);
+  --text-active: rgb(220, 220, 160);
+  --text-beige: rgb(250, 250, 210);
   --light-icon: white;
   --gray-light: #bdbdbd;
   --anchor-color: var(--primary);
@@ -48,6 +50,30 @@ body {
 
 a, input, textarea, button, select {
   font-family: 'Fira Code', monospace;
+}
+
+.text--color {
+  color: var(--text-beige);
+}
+
+a {
+  color: var(--text-beige);
+}
+
+a:hover {
+  color: var(--text-hover);
+}
+
+a:active {
+  color: var(--text-active);
+}
+
+a.trash-color {
+  color: var(--primary);
+}
+
+.golden-text {
+  color: #FFD700;
 }
 
 .bg--primary--color {
@@ -131,17 +157,6 @@ a, input, textarea, button, select {
 .messageerror {
   background-color: pink;
   color: darkred;
-}
-
-a.link-color {
-  color: lightgoldenrodyellow;
-}
-a.trash-color {
-  color: var(--primary);
-}
-
-.golden-text {
-  color: #FFD700;
 }
 
 @media (min-width: 1000px) {

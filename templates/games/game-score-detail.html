@@ -2,25 +2,26 @@
 
 {% block title %}Score Details{% endblock %}
 {% block main %}
-  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
+  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 30rem">
     <div class="card-header text-center fw-bold mb-2 text-uppercase">
         {{ gamescore.game }}
     </div>
     <div class="card-body text-primary">
-      <h5 class="card-title">{{ gamescore.score }}</h5>
+      <h5 class="card-title text-center text--color">{{ gamescore.score }}</h5>
       {% if gamescore.user == user %}
-        <a href="{% url 'games:delete' gamescore.pk %}" class="btn btn-danger btn-sm float-end me-2">
+        <a href="{% url 'games:delete' gamescore.slug %}" class="btn btn-danger btn-sm float-end me-2">
             <i class="far fa-trash-alt"></i>
         </a>
       {% endif %}
     </div>
     <div class="card-footer">
-      <small class="text-muted">
+      <small class="golden-text">
         {% if gamescore.user.avatar %}
           <img src="{{ gamescore.user.avatar.url }}" alt="{{ gamescore.user.username }}"
-            class="mt-1 rounded float-start" width="50" height="50">
+            class="mt-1 rounded float-start me-2" width="50" height="50">
         {% endif %}
-        Created on: {{ gamescore.created }} By: {{ gamescore.user.username }}
+        By: {{ gamescore.user.username }} <br>
+        Created on: {{ gamescore.created }} <br>
       </small>
     </div>
   </div>

@@ -6,8 +6,17 @@ from common.utils.text import unique_slug
 
 
 class GameReview(models.Model):
+    RATING_CHOICES = [
+        (1, "1 star"),
+        (2, "2 stars"),
+        (3, "3 stars"),
+        (4, "4 stars"),
+        (5, "5 stars"),
+    ]
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     game = models.CharField(max_length=20)
+    rating = models.IntegerField(choices=RATING_CHOICES)
     review = models.TextField()
     is_featured = models.BooleanField(default=False)
     slug = models.SlugField(max_length=50, unique=True, null=False, editable=False)

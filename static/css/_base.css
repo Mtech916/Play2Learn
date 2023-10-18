@@ -140,6 +140,10 @@ a.trash-color {
   color: var(--primary);
 }
 
+.golden-text {
+  color: #FFD700;
+}
+
 @media (min-width: 1000px) {
   .btn--nav {
     color: #fff;

@@ -1,12 +1,12 @@
 {% extends "_base.html" %}
 
-{% block title %}Confirm Delete Score{% endblock %}
+{% block title %}Confirm Delete Review{% endblock %}
 {% block main %}
   <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
     <form method="post">
         {% csrf_token %}
-        <p><strong>Are you sure you want to delete this {{ gamescore.game }} score?</strong></p>
-      <p>{{ gamescore.score }}</p>
+        <p><strong>Are you sure you want to delete this {{ gamereview.game }} review?</strong></p>
+      <p>{{ gamereview.review }}</p>
       <button class="btn btn-outline-light btn-lg btn--raised rounded-3 form-control">Confirm</button>
     </form>
     </form>

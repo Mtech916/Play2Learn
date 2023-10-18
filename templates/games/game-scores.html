@@ -3,54 +3,71 @@
 {% block title %}Game Scores{% endblock %} 
 {% block main %}
     <h1>Game Scores</h1>
-
-    <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
-        <div class="card-header text-center fw-bold mb-2 text-uppercase">
-            Math Game    
-        </div>
-        <div class="card-body">
-            <ol>
-                {% for score in math_scores %}
-                <li>
-                    Score: 
-                    <a href="{{ score.get_absolute_url }}">{{ score.score }}</a>
-                    {% if score.user == user %}
-                    <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                    {% endif %}
-                    <br>
-                    <small class="text-muted">
-                        Created on: {{ score.created }} By: {{ score.user.username }}
-                    </small>
-                </li>
-                {% endfor %}
-            </ol>
-        </div>
-    </div>
-
-    <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
-        <div class="card-header text-center fw-bold mb-2 text-uppercase">
-            Anagram Game    
-        </div>
-        <div class="card-body">
-            <ol>
-                {% for score in anagram_scores %}
-                <li>
-                    Score: 
-                    <a href="{{ score.get_absolute_url }}">{{ score.score }}</a> 
-                    {% if score.user == user %}
-                    <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                    {% endif %}
-                    <br>
-                    <small class="text-muted">
-                        Created on: {{ score.created }} By: {{ score.user.username }}
-                    </small>
-                </li>
-                {% endfor %}
-            </ol>
+<div class="row">
+    <div class="col-md-6 mb-0">
+        <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
+            <div class="card-header text-center fw-bold mb-2 text-uppercase">
+                Anagram Game    
+            </div>
+            <div class="card-body">
+                <ol>
+                    {% for score in anagram_scores %}
+                    <li class="mb-2">
+                        <a href="{{ score.get_absolute_url }}" class="link-color">
+                            Score: 
+                            {{ score.score }}
+                        </a> 
+                        {% if score.user == user %}
+                        <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                        {% endif %}
+                        <br>
+                        <div class="card-footer mt-3">
+                            <small class="golden-text">
+                                By: {{ score.user.username }}
+                                <br>
+                                Created on: {{ score.created }}
+                            </small>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
         </div>
     </div>
+    <div class="col-md-6 mb-0">
+        <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
+            <div class="card-header text-center fw-bold mb-2 text-uppercase">
+                Math Game    
+            </div>
+            <div class="card-body">
+                <ol>
+                    {% for score in math_scores %}
+                    <li class="mb-2">
+                        <a href="{{ score.get_absolute_url }}" class="link-color">
+                            Score: 
+                            {{ score.score }}
+                        </a>
+                        {% if score.user == user %}
+                        <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                        {% endif %}
+                        <br>
+                        <div class="card-footer mt-3">
+                            <small class="golden-text">
+                                By: {{ score.user.username }}
+                                <br>
+                                Created on: {{ score.created }}
+                            </small>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

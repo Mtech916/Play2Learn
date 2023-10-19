@@ -228,6 +228,8 @@
     watch: {
       timeLeft(newTimeLeft) {
         if (newTimeLeft === 0) {
+          console.log('Operation:', typeof this.operation);
+          console.log('Max Number:', typeof this.maxNumber);
           this.recordScore();
         }
       }

@@ -45,6 +45,7 @@ import anagrams from '@/data/anagrams.js';
     data() {
       return {
         selectedAnagrams: [],
+        totalWords: 0,
         currentWord: '',
         currentAnagrams: [],
         guessedAnagrams: [],
@@ -56,13 +57,16 @@ import anagrams from '@/data/anagrams.js';
     },
     methods: {
       startGame() {
+        
         this.selectedAnagrams = this.shuffleArray(this.selectedAnagrams);
-
+        
         this.currentAnagrams = this.selectedAnagrams.shift();
 
         this.currentWord = this.currentAnagrams.shift();
-
+        
         this.timer = setInterval(this.updateTimer, 1000);
+
+        this.totalWords = this.selectedAnagrams.reduce((acc, arr) => acc.concat(arr), []).length;
       },
       shuffleArray(arr) {
         // Fisher-Yates (Knuth) Shuffle algorithm
@@ -80,12 +84,17 @@ import anagrams from '@/data/anagrams.js';
         if (this.timeLeft > 0) {
           this.timeLeft--;
         } else {
+
           clearInterval(this.timer);
           this.endGame(); 
         }
       },
       fetchNewAnagrams() {
         if (this.selectedAnagrams.length === 0) {
+
+          console.log('Word Length:', typeof this.wordLength);
+          console.log('Total Words:', typeof this.totalWords);
+
           this.selectedAnagrams = [];
           this.recordScore();
           this.endGame();
@@ -130,6 +139,8 @@ import anagrams from '@/data/anagrams.js';
     watch: {
       timeLeft(newTimeLeft) {
         if (newTimeLeft === 0) {
+          console.log('Word Length:', this.wordLength);
+          console.log('Total Words:', this.totalWords);
           this.recordScore();
         }
       }

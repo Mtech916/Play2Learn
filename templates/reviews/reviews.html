@@ -22,19 +22,11 @@
                             <li>
                                 <span class="d-block text-center">
                                     <a href="{% url 'reviews:details' review.slug %}" class="link-color text-decoration-none">
-                                        <q>{{ review.review }}</q>
+                                        <q class="golden-text">{{ review.review }}</q>
                                     </a>
-                                    {% if review.user == user %}
-                                        <a href="{% url 'reviews:update' review.slug %}" class="golden-text p-2">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a>
-                                        <a href="{% url 'reviews:delete' review.slug %}" class="trash-color p-2">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    {% endif %}
-                                    <br>
+                                   
                                 </span>
-                                <div class="card-footer golden-text mt-2">
+                                <div class="card-footer mt-2">
                                     <small>
                                         {% if review.user.avatar %}
                                             <img src="{{ review.user.avatar.url }}" alt="{{ review.user.username }}" class="mt-1 rounded float-end" width="50" height="50">
@@ -61,19 +53,11 @@
                             <li>
                                 <span class="d-block text-center">
                                     <a href="{% url 'reviews:details' review.slug %}" class="text-decoration-none" >
-                                        <q>{{ review.review }}</q>
+                                        <q class="golden-text">{{ review.review }}</q>
                                     </a>
-                                    {% if review.user == user %}
-                                        <a href="{% url 'reviews:update' review.slug %}" class="golden-text p-2">
-                                            <i class="fas fa-pencil-alt"></i>
-                                        </a>
-                                        <a href="{% url 'reviews:delete' review.slug %}" class="trash-color p-2">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    {% endif %}
-                                    <br>
+                                    
                                 </span>
-                                <div class="card-footer golden-text mt-2">
+                                <div class="card-footer mt-2">
                                     <small>
                                         {% if review.user.avatar %}
                                             <img src="{{ review.user.avatar.url }}" alt="{{ review.user.username }}" class="mt-1 rounded float-end" width="50" height="50">

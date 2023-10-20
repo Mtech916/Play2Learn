@@ -5,13 +5,6 @@ from .models import GameReview
 
 
 class GameReviewForm(forms.ModelForm):
-    GAME_CHOICES = [
-        ("ANAGRAM", "Anagram Hunt"),
-        ("MATH", "Math Facts Practice"),
-    ]
-
-    game = forms.ChoiceField(choices=GAME_CHOICES)
-
     class Meta:
         model = GameReview
         fields = (

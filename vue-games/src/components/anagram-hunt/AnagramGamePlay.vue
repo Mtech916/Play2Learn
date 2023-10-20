@@ -84,17 +84,12 @@ import anagrams from '@/data/anagrams.js';
         if (this.timeLeft > 0) {
           this.timeLeft--;
         } else {
-
           clearInterval(this.timer);
           this.endGame(); 
         }
       },
       fetchNewAnagrams() {
         if (this.selectedAnagrams.length === 0) {
-
-          console.log('Word Length:', typeof this.wordLength);
-          console.log('Total Words:', typeof this.totalWords);
-
           this.selectedAnagrams = [];
           this.recordScore();
           this.endGame();
@@ -122,6 +117,8 @@ import anagrams from '@/data/anagrams.js';
       async recordScore() {
         const data = {
           'score': this.score,
+          'word_length': this.wordLength,
+          'total_words': this.totalWords,
           'game': 'ANAGRAM'
         };
         
@@ -139,8 +136,6 @@ import anagrams from '@/data/anagrams.js';
     watch: {
       timeLeft(newTimeLeft) {
         if (newTimeLeft === 0) {
-          console.log('Word Length:', this.wordLength);
-          console.log('Total Words:', this.totalWords);
           this.recordScore();
         }
       }

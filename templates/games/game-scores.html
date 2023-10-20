@@ -13,18 +13,13 @@
                 <ol>
                     {% for score in anagram_scores %}
                     <li class="mb-2">
-                        <a href="{{ score.get_absolute_url }}" class="link-color">
+                        <a href="{{ score.get_absolute_url }}" class="golden-text">
                             Score: 
                             {{ score.score }}
                         </a> 
-                        {% if score.user == user %}
-                        <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
-                        {% endif %}
-                        <br>
+                        
                         <div class="card-footer mt-3">
-                            <small class="golden-text">
+                            <small>
                                 By: {{ score.user.username }}
                                 <br>
                                 Created on: {{ score.created }}
@@ -45,18 +40,13 @@
                 <ol>
                     {% for score in math_scores %}
                     <li class="mb-2">
-                        <a href="{{ score.get_absolute_url }}" class="link-color">
+                        <a href="{{ score.get_absolute_url }}" class="golden-text">
                             Score: 
                             {{ score.score }}
                         </a>
-                        {% if score.user == user %}
-                        <a href="{% url 'games:delete' score.slug %}" class="btn btn-danger btn-sm float-end me-2">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
-                        {% endif %}
-                        <br>
+                        
                         <div class="card-footer mt-3">
-                            <small class="golden-text">
+                            <small>
                                 By: {{ score.user.username }}
                                 <br>
                                 Created on: {{ score.created }}

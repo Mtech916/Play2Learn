@@ -6,14 +6,27 @@
         <div class="card-header text-center fw-bold mb-2 text-uppercase">
             Review Card
         </div>
-        <div class="card-body text-primary">
-            <h5 class="card-title text-center text--color">{{ gamereview.game }}</h5>
-            <p class="text--color">
-                {{ gamereview.review }}
+        <div class="card-body">
+            <h5 class="card-title text-center text--color">
+                {{ gamereview.get_game_display }}
+            </h5>
+            {% if gamereview.user.avatar %}
+                <img src="{{ gamereview.user.avatar.url }}" alt="{{ gamereview.user.username }}" class="mt-1 rounded float-start me-2" width="150" height="150">
+            {% endif %}
+            <p>
+                Player {{ gamereview.user.username }} says...<br>
+                <q class="golden-text">
+                    {{ gamereview.review }}
+                </q>
+                
+            </p>
+            <p>
                 {% if gamereview.user == user %}
+                Update:
                     <a href="{% url 'reviews:update' gamereview.slug %}" class="golden-text p-2">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
+                Delete:
                     <a href="{% url 'reviews:delete' gamereview.slug %}" class="btn btn-danger btn-sm p-2">
                         <i class="far fa-trash-alt"></i>
                     </a>
@@ -21,11 +34,9 @@
             </p>
         </div>
         <div class="card-footer">
-            <small class="golden-text">
-                {% if gamereview.user.avatar %}
-                <img src="{{ gamereview.user.avatar.url }}" alt="{{ gamereview.user.username }}" class="mt-1 rounded float-start me-2" width="50" height="50">
-                {% endif %}
-                By: {{ gamereview.user.username }} <br>
+            <small>
+                
+                
                 Created on: {{ gamereview.created }} <br>
                 Last Updated: {{ gamereview.updated }}
             </small>

@@ -6,6 +6,11 @@ from common.utils.text import unique_slug
 
 
 class GameReview(models.Model):
+    GAME_CHOICES = [
+        ("ANAGRAM", "Anagram Hunt"),
+        ("MATH", "Math Facts Practice"),
+    ]
+
     RATING_CHOICES = [
         (1, "1 star"),
         (2, "2 stars"),
@@ -15,7 +20,7 @@ class GameReview(models.Model):
     ]
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    game = models.CharField(max_length=20)
+    game = models.CharField(max_length=20, choices=GAME_CHOICES)
     rating = models.IntegerField(choices=RATING_CHOICES)
     review = models.TextField()
     is_featured = models.BooleanField(default=False)

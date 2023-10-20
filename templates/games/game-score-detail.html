@@ -6,21 +6,47 @@
     <div class="card-header text-center fw-bold mb-2 text-uppercase">
         {{ gamescore.get_game_display }}
     </div>
-    <div class="card-body text-primary">
-      <h5 class="card-title text-center text--color">{{ gamescore.score }}</h5>
-      {% if gamescore.user == user %}
-        <a href="{% url 'games:delete' gamescore.slug %}" class="btn btn-danger btn-sm float-end me-2">
-            <i class="far fa-trash-alt"></i>
-        </a>
+    <div class="card-body">
+      <h5 class="card-title text-center text--color">
+        Score Card
+      </h5>
+      {% if gamescore.user.avatar %}
+          <img src="{{ gamescore.user.avatar.url }}" alt="{{ gamescore.user.username }}"
+            class="mt-1 rounded float-start me-2" width="150" height="150">
       {% endif %}
+      <div class="golden-text">
+        <p>
+          Player: {{ gamescore.user.username }} 
+        </p>
+        <p>
+          Final Score = {{ gamescore.score }}
+        </p>
+        {% if gamescore.game == 'MATH' %}
+        <p>
+          Operation => {{ gamescore.get_operation_display }}
+        </p>
+        <p>
+          Max Number: {{ gamescore.max_number }}
+        </p>
+        {% else %}
+        <p>
+          Word Length: {{ gamescore.get_word_length_display }}
+        </p>
+        <p>
+          Total Words Available:  {{ gamescore.total_words }}
+        </p>
+        {% endif %}
+        {% if gamescore.user == user %}
+        <a href="{% url 'games:delete' gamescore.slug %}" class="btn btn-danger btn-sm float-end me-2">
+          <i class="far fa-trash-alt"></i>
+        </a>
+        {% endif %}
+      </div>
     </div>
     <div class="card-footer">
-      <small class="golden-text">
-        {% if gamescore.user.avatar %}
-          <img src="{{ gamescore.user.avatar.url }}" alt="{{ gamescore.user.username }}"
-            class="mt-1 rounded float-start me-2" width="50" height="50">
-        {% endif %}
-        By: {{ gamescore.user.username }} <br>
+      <small>
+        
+        
         Created on: {{ gamescore.created }} <br>
       </small>
     </div>

@@ -77,7 +77,20 @@ def record_score(request):
     game = data["game"]
     score = data["score"]
 
-    new_score = GameScore(user=user, game=game, score=score)
+    new_score_data = {
+        "user": user,
+        "game": game,
+        "score": score,
+    }
+
+    if game == "ANAGRAM":
+        new_score_data["word_length"] = data.get("word_length")
+        new_score_data["total_words"] = data.get("total_words")
+    elif game == "MATH":
+        new_score_data["operation"] = data.get("operation")
+        new_score_data["max_number"] = data.get("max_number")
+
+    new_score = GameScore(**new_score_data)
     new_score.save()
 
     response = {"success": True}

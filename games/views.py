@@ -15,7 +15,6 @@ class AnagramHuntView(TemplateView):
 
 class GameScoreView(ListView):
     model = GameScore
-    template_name = "games/game-scores.html"
 
     def get_context_data(self, **kwargs):
         context = super(GameScoreView, self).get_context_data(**kwargs)
@@ -58,7 +57,6 @@ class GameScoreDeleteView(UserPassesTestMixin, DeleteView):
 
 class GameScoreDetailView(LoginRequiredMixin, DetailView):
     model = GameScore
-    template_name = "games/game-score-detail.html"
 
 
 class MathFactsView(TemplateView):
@@ -66,7 +64,7 @@ class MathFactsView(TemplateView):
 
 
 class MathFactsPlayView(MathFactsView):
-    template_name = "games/math-facts-play.html"
+    template_name = "games/mathfacts_play.html"
 
 
 @login_required

@@ -14,6 +14,7 @@
                 <img src="{{ gamereview.user.avatar.url }}" alt="{{ gamereview.user.username }}" class="mt-1 rounded float-start me-2" width="150" height="150">
             {% endif %}
             <p>
+                Rating: <span>{{ gamereview.game_rating|safe }}</span> <br>
                 Player {{ gamereview.user.username }} says...<br>
                 <q class="golden-text">
                     {{ gamereview.review }}

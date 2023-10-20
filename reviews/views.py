@@ -8,6 +8,7 @@ from django.views.generic import (
     CreateView,
     DeleteView,
     DetailView,
+    ListView,
     TemplateView,
     UpdateView,
 )
@@ -79,16 +80,12 @@ class GameReviewsUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView
         return self.request.user == obj.user
 
 
-class ReviewsPageView(TemplateView):
+class ReviewsPageView(ListView):
     model = GameReview
-    template_name = "reviews/reviews.html"
+    template_name = "reviews/reviews_list.html"
+    context_object_name = "reviews"
 
-    def get_context_data(self, **kwargs):
-        context = super(ReviewsPageView, self).get_context_data(**kwargs)
-        context["anagram_reviews"] = GameReview.objects.filter(
-            game__exact="ANAGRAM"
-        ).order_by("game")
-        context["math_reviews"] = GameReview.objects.filter(
-            game__exact="MATH"
-        ).order_by("game")
-        return context
+
+def get_queryset(self):
+    game_type = self.kwargs.get("game_type", "ANAGRAM")
+    return GameReview.objects.filter(game=game_type).order_by("rating")

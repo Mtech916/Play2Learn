@@ -13,12 +13,12 @@
         <div class="row">
             <div class="col-md-6 mb-0">
                 <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
-                    {% for review in reviews %}
-                        {% if review.game == 'ANAGRAM' %}
-                    <div class="card-header text-center fw-bold mb-2 text-uppercase">
-                        {{ review.get_game_display }}
+                    <div class="card-header text-center fw-bold mb-2">
+                        Anagram Hunt
                     </div>
                     <div class="card-body">
+                        {% for review in reviews %}
+                            {% if review.game == 'ANAGRAM' %}
                         <P>
                             Rating: <span>{{ review.game_rating|safe }}</span>
                         </P>
@@ -37,52 +37,55 @@
                                         {% endif %}
                                         By: {{ review.user.username }} <br>
                                         Created on: {{ review.created }} <br>
-                                        Last Updated: {{ review.updated }}
+                                        Last Updated: {{ review.updated|date }}
                                     </small>
                                 </div>
                             </li>
                         </ol>
-                    </div>
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 mb-0">
                 <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 33rem">
-                    {% for review in reviews %}
-                        {% if review.game == 'MATH' %}
-                            <div class="card-header text-center fw-bold mb-2 text-uppercase">
-                                {{ review.get_game_display }}
-                            </div>
-                            <div class="card-body">
-                                <P>
-                                    Rating: <span>{{ review.game_rating|safe }}</span>
-                                </P>
-                                <ol class="list-unstyled">
-                                    <li>
-                                        <span class="d-block text-center">
-                                            <a href="{% url 'reviews:details' review.slug %}" class="text-decoration-none" >
-                                                <q class="golden-text">{{ review.review }}</q>
-                                            </a>
-                                            
-                                        </span>
-                                        <div class="card-footer mt-2">
-                                            <small>
-                                                {% if review.user.avatar %}
-                                                    <img src="{{ review.user.avatar.url }}" alt="{{ review.user.username }}" class="mt-1 rounded float-end" width="50" height="50">
-                                                {% endif %}
-                                                By: {{ review.user.username }} <br>
-                                                Created on: {{ review.created }} <br>
-                                                Last Updated: {{ review.updated }}
-                                            </small>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                    <div class="card-header text-center fw-bold mb-2">
+                        Math Facts Practice
+                    </div>
+                    <div class="card-body">
+                        {% for review in reviews %}
+                            {% if review.game == 'MATH' %}
+                        <P>
+                            Rating: <span>{{ review.game_rating|safe }}</span>
+                        </P>
+                        <ol class="list-unstyled">
+                            <li>
+                                <span class="d-block text-center">
+                                    <a href="{% url 'reviews:details' review.slug %}" class="text-decoration-none" >
+                                        <q class="golden-text">{{ review.review }}</q>
+                                    </a>
+                                    
+                                </span>
+                                <div class="card-footer mt-2">
+                                    <small>
+                                        {% if review.user.avatar %}
+                                            <img src="{{ review.user.avatar.url }}" alt="{{ review.user.username }}" class="mt-1 rounded float-end" width="50" height="50">
+                                        {% endif %}
+                                        By: {{ review.user.username }} <br>
+                                        Created on: {{ review.created }} <br>
+                                        Last Updated: {{ review.updated|date }}
+                                    </small>
+                                </div>
+                            </li>
+                        </ol>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {% include 'includes/pagination.html' %}
+
 {% endblock %}

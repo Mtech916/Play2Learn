@@ -83,6 +83,7 @@ class GameReviewsUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView
 class ReviewsPageView(ListView):
     model = GameReview
     template_name = "reviews/reviews_list.html"
+    paginate_by = 10
     context_object_name = "reviews"
 
 

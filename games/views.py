@@ -15,27 +15,9 @@ class AnagramHuntView(TemplateView):
 
 class GameScoreView(ListView):
     model = GameScore
-
-    def get_context_data(self, **kwargs):
-        context = super(GameScoreView, self).get_context_data(**kwargs)
-
-        # Anagram Hunt context
-        context["anagram_settings"] = GameScore.objects.filter(
-            game__exact="ANAGRAM"
-        ).values("word_length", "total_words")
-        context["anagram_scores"] = GameScore.objects.filter(
-            game__exact="ANAGRAM"
-        ).order_by("-score")
-
-        # Math Facts Practice context
-        context["math_settings"] = GameScore.objects.filter(game__exact="MATH").values(
-            "operation", "max_number"
-        )
-        context["math_scores"] = GameScore.objects.filter(game__exact="MATH").order_by(
-            "-score"
-        )
-
-        return context
+    ordering = ["-score", "game", "-created"]
+    paginate_by = 10
+    context_object_name = "gamescores"
 
 
 class GameScoreDeleteView(UserPassesTestMixin, DeleteView):

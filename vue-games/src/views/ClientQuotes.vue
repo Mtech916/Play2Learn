@@ -13,7 +13,9 @@
         </div>
       </div>
       <div v-else>
-        Reviews Loading...
+        <h1>
+          Reviews Loading...
+        </h1>
       </div>
     </div>  
 

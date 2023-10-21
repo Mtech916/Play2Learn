@@ -6,6 +6,7 @@ from reviews.views import (
     GameReviewsDeleteView,
     GameReviewsDetailView,
     GameReviewsUpdateView,
+    get_game_reviews,
     ReviewsPageView,
 )
 
@@ -20,5 +21,6 @@ urlpatterns = [
         GameReviewsDetailView.as_view(),
         name="details",
     ),
+    path("get-game-reviews/", get_game_reviews, name="get-game-reviews"),
     path("", ReviewsPageView.as_view(), name="reviews"),
 ]

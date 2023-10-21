@@ -89,10 +89,6 @@ class ReviewsPageView(ListView):
     paginate_by = 10
     context_object_name = "reviews"
 
-    def get_queryset(self):
-        game_type = self.kwargs.get("game_type", "ANAGRAM")
-        return GameReview.objects.filter(game=game_type).order_by("rating")
-
 
 def get_game_reviews(request):
     featured_reviews = GameReview.objects.filter(is_featured=True)

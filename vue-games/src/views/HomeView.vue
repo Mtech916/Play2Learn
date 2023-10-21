@@ -3,9 +3,14 @@
     <div class="container-fluid">
       <h1 class="d-flex flex-start text--lg py-5">Happy Clients Say...</h1>
 
-      <ClientQuotes />
-
-      <AvailableGames />
+      <div class="row">
+        <ClientQuotes />
+  
+        <AvailableGames />
+      </div>
+      <div class="row">
+        <h2 class="text-center">coming soon!</h2>
+      </div>
 
     </div>
   </main>

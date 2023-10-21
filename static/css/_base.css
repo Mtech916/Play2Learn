@@ -80,6 +80,12 @@ a.trash-color {
   background-color: var(--gunmetal-grey);
 }
 
+/* .bg--img {
+  background-image: url('../images/Anagram-Hunt-thumbnail.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+} */
+
 .special--border {
   box-shadow: inset 0 -2px 3px 5px var(--text-beige);
 }

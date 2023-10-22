@@ -13,11 +13,11 @@ class AnagramHuntView(TemplateView):
     template_name = "games/anagram-hunt.html"
 
 
-class GameScoreView(ListView):
+class LeaderBoardView(ListView):
     model = GameScore
     ordering = ["-score", "game", "-created"]
     paginate_by = 10
-    context_object_name = "gamescores"
+    context_object_name = "top_scores"
 
 
 class GameScoreDeleteView(UserPassesTestMixin, DeleteView):

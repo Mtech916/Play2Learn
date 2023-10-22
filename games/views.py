@@ -14,31 +14,6 @@ class AnagramHuntView(TemplateView):
     template_name = "games/anagram-hunt.html"
 
 
-class LeaderBoardView(ListView):
-    model = GameScore
-    ordering = ["-score", "game", "-created"]
-    paginate_by = 10
-    context_object_name = "top_scores"
-
-
-class MyScoresView(LoginRequiredMixin, ListView):
-    model = GameScore
-    template_name = "games/myscores_list.html"
-    paginate_by = 10
-    context_object_name = "my_scores"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["username"] = self.request.user.username
-        return context
-
-    def get_queryset(self):
-        user = self.request.user
-        qs = GameScore.objects.filter(user=user)
-        ordering = ["-score", "-game", "-created"]
-        return qs.order_by(*ordering)
-
-
 class GameScoreDeleteView(UserPassesTestMixin, DeleteView):
     model = GameScore
     success_url = reverse_lazy("games:game-scores")
@@ -60,12 +35,74 @@ class GameScoreDetailView(LoginRequiredMixin, DetailView):
     model = GameScore
 
 
+class LeaderBoardView(ListView):
+    model = GameScore
+    ordering = ["-score", "game", "-created"]
+    paginate_by = 10
+    context_object_name = "top_scores"
+
+
 class MathFactsView(TemplateView):
     template_name = "games/math-facts.html"
 
 
 class MathFactsPlayView(MathFactsView):
     template_name = "games/mathfacts_play.html"
+
+
+class MyScoresView(LoginRequiredMixin, ListView):
+    model = GameScore
+    template_name = "games/myscores_list.html"
+    paginate_by = 10
+    context_object_name = "my_scores"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["username"] = self.request.user.username
+
+        order_fields, order_key, direction = self.get_order_settings()
+
+        context["order"] = order_key
+        context["direction"] = direction
+
+        context["order_fields"] = list(order_fields.keys())[:-1]
+
+        return context
+
+    def get_queryset(self):
+        user = self.request.user
+        qs = GameScore.objects.filter(user=user)
+        ordering = self.get_ordering()
+        return qs.order_by(ordering)
+
+    def get_ordering(self):
+        order_fields, order_key, direction = self.get_order_settings()
+
+        ordering = order_fields[order_key]
+
+        if direction != "asc":
+            ordering = "-" + ordering
+
+        return ordering
+
+    def get_order_settings(self):
+        order_fields = self.get_order_fields()
+        default_order_key = order_fields["default_key"]
+        order_key = self.request.GET.get("order", "-created")
+        direction = self.request.GET.get("direction", "desc")
+
+        if order_key not in order_fields:
+            order_key = default_order_key
+
+        return (order_fields, order_key, direction)
+
+    def get_order_fields(self):
+        return {
+            "score": "score",
+            "game": "game",
+            "created": "created",
+            "default_key": "created",
+        }
 
 
 @login_required

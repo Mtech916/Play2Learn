@@ -3,10 +3,32 @@
 {% block title %}My Scores{% endblock %}
 {% block main %}
 
+
+
 <div class="card bg--primary--color mx-auto my-3" style="width: 60rem;">
     <div class="card-header text-center fw-bold mb-2">
-      <h1>{{ username }}</h1>
-      <small>Score Board</small>
+      <h1>Score Board</h1>
+      <h2>Player: {{ username }}</h2>
+      <form>
+        <label for="order">Order By:</label>
+        <select name="order" id="order">
+          {% for field in order_fields %}
+            <option value="{{ field }}" {% if order == field %}selected{% endif %}>
+              {{ field|title }}
+            </option>
+          {% endfor %}
+        </select>
+        <input type="radio" name="direction" id="asc" value="asc"
+          {% if direction == 'asc' %}checked{% endif %}
+        >
+        <label for="asc">ASC</label>
+        <input type="radio" name="direction" id="desc" value="desc"
+          {% if direction == 'desc' %}checked{% endif %}
+        >
+        <label for="desc">DESC</label>
+        <button type="submit">Sort</button>
+      </form>
+
     </div>
     <div class="table-responsive">
     
@@ -14,14 +36,25 @@
         <thead class="text-center">
           
           <tr>
-            
-            <th><a href="#">Game</a></th>
+            {% if request.Get.order == 'game' and request.GET.direction == 'asc' %}
+            <th><a href="?order=game&direction=desc">Game</a></th>
+            {% else %}
+            <th><a href="?order=game&direction=asc">Game</a></th>
+            {% endif %}
         
-            <th><a href="#" class="float-start">Settings</a></th>
+            <th><span class="float-start">Settings</span></th>
     
-            <th><a href="#">Final Score</a></th>
+            {% if request.GET.order == 'score' and request.GET.direction == 'asc' %}
+            <th><a href="?order=score&direction=desc">Final Score</a></th>
+            {% else %}
+            <th><a href="?order=score&direction=asc">Final Score</a></th>
+            {% endif %}
 
-            <th><a href="#">Recorded On</a></th>
+            {% if request.GET.order == 'created' and request.GET.direction == 'asc' %}
+            <th><a href="?order=created&direction=desc">Created On</a></th>
+            {% else %}
+            <th><a href="?order=created&direction=asc">Created On</a></th>
+            {% endif %}
 
           </tr>
     
@@ -30,9 +63,6 @@
         <tbody>
           {% for score in my_scores %}
               <tr>
-                <td class="text-center">
-                    {{ score.user.username }}
-                </td>
                 <td class="text-center">
                     {{ score.get_game_display }}
                 </td>

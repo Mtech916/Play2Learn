@@ -1,7 +1,8 @@
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views.generic import DeleteView, DetailView, ListView, TemplateView
 
 import json
@@ -18,6 +19,24 @@ class LeaderBoardView(ListView):
     ordering = ["-score", "game", "-created"]
     paginate_by = 10
     context_object_name = "top_scores"
+
+
+class MyScoresView(LoginRequiredMixin, ListView):
+    model = GameScore
+    template_name = "games/myscores_list.html"
+    paginate_by = 10
+    context_object_name = "my_scores"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["username"] = self.request.user.username
+        return context
+
+    def get_queryset(self):
+        user = self.request.user
+        qs = GameScore.objects.filter(user=user)
+        ordering = ["-score", "-game", "-created"]
+        return qs.order_by(*ordering)
 
 
 class GameScoreDeleteView(UserPassesTestMixin, DeleteView):

@@ -15,7 +15,6 @@ class GameReviewAdmin(Play2LearnAdmin):
         "user",
         "game",
         "rating",
-        "review",
         "is_featured",
         "created",
         "updated",

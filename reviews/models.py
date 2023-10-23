@@ -34,22 +34,19 @@ class GameReview(models.Model):
 
     @property
     def game_rating(self):
-        full_star = "&#9733;"
-        empty_star = "&#9734;"
+        full_star = '<i class="fa-solid fa-star" style="color: #ffff00;"></i>'
         stars = ""
 
         if self.rating == 5:
             stars = full_star * 5
         elif self.rating == 4:
-            stars = full_star * 4 + empty_star
+            stars = full_star * 4
         elif self.rating == 3:
-            stars = full_star * 3 + empty_star * 2
+            stars = full_star * 3
         elif self.rating == 2:
-            stars = full_star * 2 + empty_star * 3
+            stars = full_star * 2
         elif self.rating == 1:
-            stars = full_star + empty_star * 4
-        else:
-            stars = empty_star * 5
+            stars = full_star
 
         return format_html(stars)
 

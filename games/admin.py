@@ -1,11 +1,15 @@
+from common.admin import Play2LearnAdmin
 from django.contrib import admin
 
 from games.models import GameScore
 
 
 @admin.register(GameScore)
-class GameScoreAdmin(admin.ModelAdmin):
+class GameScoreAdmin(Play2LearnAdmin):
     model = GameScore
+
+    # List Attributes
+    date_hierarchy = "created"
     list_display = [
         "user",
         "game",
@@ -16,6 +20,8 @@ class GameScoreAdmin(admin.ModelAdmin):
         "score",
         "created",
     ]
+    list_filter = ["game", "created"]
+    ordering = ["-created"]
 
     def get_readonly_fields(self, request, obj=None):
         if obj:

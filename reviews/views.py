@@ -83,9 +83,26 @@ class GameReviewsUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView
         return self.request.user == obj.user
 
 
+class MyReviewsView(ListView):
+    model = GameReview
+    template_name = "reviews/myreviews_list.html"
+    paginate_by = 10
+    context_object_name = "my_reviews"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["username"] = self.request.user.username
+        return context
+
+    def get_queryset(self):
+        user = self.request.user
+        qs = GameReview.objects.filter(user=user)
+        ordering = ["game"]
+        return qs.order_by(*ordering)
+
+
 class ReviewsPageView(ListView):
     model = GameReview
-    template_name = "reviews/reviews_list.html"
     ordering = ["-rating"]
     paginate_by = 10
     context_object_name = "reviews"

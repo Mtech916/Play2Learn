@@ -6,7 +6,7 @@
 <div class="card bg--primary--color mx-auto my-3" style="width: 60rem;">
     <div class="card-header text-center fw-bold mb-2">
       <h1>Game Reviews</h1>
-      <small>Top 10 Scores</small>
+      <small>Our Scores from our gamer community!</small>
     </div>
     <div class="table-responsive">
     
@@ -37,7 +37,11 @@
                     {{ review.get_game_display }}
                 </td>
                 <td class="text-ellipsis">
-                    {{ review.review }}
+                    <a href="{% url 'reviews:details' review.slug %}">
+                        <q>
+                            {{ review.review }}
+                        </q>
+                    </a>
                 </td>
                 <td class="text-center">
                         {{ review.user.username }}
@@ -48,5 +52,7 @@
       </table>
     </div>
 </div>
+
+{% include 'includes/pagination.html' %}
 
 {% endblock %}

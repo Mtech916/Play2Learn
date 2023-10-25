@@ -6,13 +6,14 @@
             {% block head %}
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+                
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
                 <link rel="stylesheet" href="{% static 'css/_base.css' %}">
                 {% block javascript %}
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
+                <script src="{% static 'js/bootstrap.bundle.min.js' %}" defer></script>
                 <script src="https://kit.fontawesome.com/391afddfb3.js" crossorigin="anonymous" defer></script>
                 {% endblock %}
                 <link rel="shortcut icon" type="image/png" href="{% static 'images/logo.svg' %}">
@@ -22,8 +23,8 @@
         <body>
             {% block body %}
                 <header class="bg--primary--color">
-                    <nav class="navbar navbar-expand-lg navbar-dark">
-                        <div class="container-fluid">
+                    <nav class="navbar navbar-expand-md navbar-dark">
+                        <div class="container">
                             <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="me-1" />
                             <a href="{% url 'pages:homepage' %}" class="navbar-brand text-uppercase">Play2Learn</a>
                             <button class="navbar-toggler" type="button" 
@@ -49,9 +50,16 @@
                                             <a href="{% url 'games:math-facts' %}" class="dropdown-item text-white dd--game text-uppercase
                                             ">Math Facts Practice</a>
                                         </li>
+                                        <div class="dropdown-divider"></div>
+                                        <li>
+                                            <a href="{% url 'games:leaderboard' %}" class="dropdown-item text-white dd--game text-uppercase">
+                                                Leaderboards
+                                            </a>
+                                        </li>
                                         <li>
                                             <a href="{% url 'reviews:reviews' %}" class="dropdown-item text-white dd--game text-uppercase">Reviews</a>
                                         </li>
+                                        <div class="dropdown-divider"></div>
                                         <li>
                                             <a href="{% url 'pages:about' %}" class="dropdown-item text-white dd--game text-uppercase">About</a>
                                         </li>
@@ -103,11 +111,6 @@
                                         </ul>
                                     {% endif %}
                                     </li>
-                                    <li class="nav-item m-1">
-                                        <a href="{% url 'games:leaderboard' %}" class="nav-link btn--nav text-uppercase">
-                                            Leaderboards
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -128,7 +131,7 @@
                 </main>
 
                 <footer id="footer" class="navbar fixed-bottom bg--primary--color">
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="d-flex align-items-center">
                             <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="me-1" />
                             <a href="https://www.webucator.com" class="d-none d-sm-block text-light nav-link text-uppercase">

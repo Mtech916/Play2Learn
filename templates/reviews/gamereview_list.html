@@ -3,7 +3,7 @@
 {% block title %}Game Reviews{% endblock %}
 {% block main %}
 <div class="container">
-  <div class="row bg-light my-4">
+  <div class="row bg-light my-4 my-sm-5">
     <div class="col-sm-4 offset-sm-2 text-center mb-3">
       <h1>Game Reviews</h1>
       <small>Our Scores from the gamer community!</small>
@@ -13,9 +13,8 @@
         </a>
       </div>
     </div>
-    
     <div class="col-sm-4 offset-sm-2 offset-md-0">
-      <div class="card shadow">
+      <div class="card shadow-lg mt-2">
         <div class="card-body text-center">
           <h3 class="display-3 fw-semibold">
             <i class="fas fa-star text-warning"></i> {{ average_rating|floatformat:1 }}
@@ -31,13 +30,13 @@
           <tr>
             {% if request.GET.order == 'rating' and request.GET.direction == 'asc' %}
             <th class="d-none d-sm-block">
-              <a href="?order=rating&direction=desc">
+              <a href="?order=rating&direction=desc" class="text-decoration-none">
                 Rating
               </a>
             </th>
             {% else %}
             <th class="d-none d-sm-block">
-              <a href="?order=rating&direction=asc">
+              <a href="?order=rating&direction=asc" class="text-decoration-none">
                 Rating
               </a>
             </th>
@@ -45,13 +44,13 @@
 
             {% if request.GET.order == 'game' and request.GET.direction == 'asc' %}
             <th>
-              <a href="?order=game&direction=desc">
+              <a href="?order=game&direction=desc" class="text-decoration-none">
                 Game
               </a>
             </th>
             {% else %}
             <th>
-              <a href="?order=game&direction=asc">
+              <a href="?order=game&direction=asc" class="text-decoration-none">
                 Game
               </a>
             </th>
@@ -77,7 +76,7 @@
                     {{ review.get_game_display }}
                 </td>
                 <td>
-                  <a href="{% url 'reviews:details' review.slug %}">
+                  <a href="{% url 'reviews:details' review.slug %}" class="text-decoration-none">
                     <q>
                       {{ review.review }}
                     </q>

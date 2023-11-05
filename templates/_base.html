@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="{% static 'css/_base.css' %}">
       {% block javascript %}
       <script src="{% static 'js/bootstrap.bundle.min.js' %}" defer></script>
+      <script src="{% static 'js/scroll.js' %}" defer></script>
       <script src="https://kit.fontawesome.com/391afddfb3.js" crossorigin="anonymous" defer></script>
       {% endblock %}
       <link rel="shortcut icon" type="image/png" href="{% static 'images/logo.svg' %}">
@@ -22,7 +23,7 @@
   <body>
     {% block body %}
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg shadow bg-secondary bg-gradient bg-opacity-75">
+      <nav class="navbar navbar-expand-lg text-black sticky-top">
         <div class="container">
           <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="me-1" />
           <a href="{% url 'pages:homepage' %}" class="navbar-brand">Play2Learn</a>
@@ -207,12 +208,12 @@
         {% endblock %}
       </main>
 
-      <footer id="footer" class="fixed-bottom bg-secondary bg-gradient bg-opacity-75">
+      <footer id="footer" class="bg-secondary bg-gradient bg-opacity-75 pb-2">
         <div class="container">
           <div class="row">
             <div class="d-none d-sm-block col-sm-8 d-sm-flex">
               <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="" />
-              <p class="text-black ps-2 pt-2">
+              <p class="text-black ps-2 p-2">
                   Play2Learn &copy; {% now 'Y' %}
               </p>
             </div>
@@ -233,6 +234,11 @@
           </div>  
         </div>
       </footer>
+
+      <button id="to-top" class="to-top-btn">
+        <img src="{% static 'images/up-arrow.png' %}" alt="Up Arrow">
+      </button>
+
     {% endblock %}
   </body>
 </html>

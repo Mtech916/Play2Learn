@@ -42,17 +42,17 @@
           <a href="{% url 'reviews:details' review.slug %}" class="text-decoration-none  text-white" >
           <div class="card shadow-lg border-0 my-3">
             <div class="card-body card--bg-img-2 position-relative">
-            <div class="card-title position-relative text-center text-white fw-bold mb-2">
-              {{ review.get_game_display }}
-            </div>
-              <P class="position-relative">
+              <div class="card-title position-relative text-center text-white fw-bold mb-2">
+                {{ review.get_game_display }}
+              </div>
+              <p class="position-relative">
                 <span class="text-white">Rating: </span><span>{{ review.game_rating|safe }}</span>
-              </P>
-                <span class="d-block position-relative text-center">
-                      <q class="text-white">{{ review.review }}</q>
-                    </span>
-                  </div>
-                </div>
+              </p>
+              <span class="d-block position-relative text-center">
+                <q class="text-white">{{ review.review }}</q>
+              </span>
+            </div>
+          </div>
               </a>
           {% endif %}
         {% endfor %}

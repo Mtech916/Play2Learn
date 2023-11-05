@@ -2,11 +2,21 @@
 
 {% block title %}Review Submitted{% endblock %}
 {% block main %}
-  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 p-3 text-center" style="max-width: 50rem">
-    <p>Thanks, for taking your time to give an honest review.</p>
-    <p>Be on the lookout to see if your review lands on our Featured Reviews List!</p>
-    <a href="#" class="btn btn-outline-light btn-lg btn--raised rounded-3">
-        Check out Featured Reviews
-    </a>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card shadow-lg my-3 p-3 text-center">
+        <p>Thanks, for taking your time to give an honest review.</p>
+        <p>Be on the lookout to see if your review lands on our Featured Reviews List!</p>
+        <div class="row">
+          <div class="col-8 offset-2">
+            <a href="{% url 'reviews:reviews' %}" class="btn btn-outline-light btn--raised rounded-3">
+                What other players say...
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 {% endblock %}

@@ -29,29 +29,28 @@
                     {{ gamereview.review }}
                   </q>
                 </p>
-                
               </div>
             </div>
             <div class="row">
               <div class="col-12 text-center">
-                  {% if gamereview.user == user %}
-                  <span>Update:
-                    <a href="{% url 'reviews:update' gamereview.slug %}" class="text-decoration-none golden-text p-2">
-                      <i class="fas fa-pencil-alt"></i>
-                    </a></span>
-                  <span>Delete:
-                    <a href="{% url 'reviews:delete' gamereview.slug %}" class="btn btn-danger btn-sm p-2">
-                      <i class="far fa-trash-alt"></i>
-                    </a></span>
-                  {% endif %}
+                {% if gamereview.user == user %}
+                <span>Update:
+                  <a href="{% url 'reviews:update' gamereview.slug %}" class="text-decoration-none golden-text p-2">
+                    <i class="fas fa-pencil-alt"></i>
+                  </a></span>
+                <span>Delete:
+                  <a href="{% url 'reviews:delete' gamereview.slug %}" class="btn btn-danger btn-sm p-2">
+                    <i class="far fa-trash-alt"></i>
+                  </a></span>
+                {% endif %}
               </div>
             </div>
           </div>
           <div class="card-footer">
-              <small>
-                  Created on: {{ gamereview.created }} <br>
-                  Last Updated: {{ gamereview.updated|date }}
-              </small>
+            <small>
+              Created on: {{ gamereview.created }} <br>
+              Last Updated: {{ gamereview.updated|date }}
+            </small>
           </div>
         </div>
       </div>

@@ -13,8 +13,6 @@
       </div>
     </div>
   </div>
-
-
   <div class="row my-4">
     <div class="col-md-4 mb-4">
       <div class="card shadow border-0">
@@ -59,66 +57,56 @@
       </div>
     </div>
   </div>
-  
-  
-      <div class="table-responsive bg-light shadow-lg mb-5">
-      
-        <table class="table table-striped">
-          <thead class="text-center">
-            
-            <tr>
-      
-              <th>Player</th>
-              
-              <th>Game</th>
-          
-              <th class="d-none d-sm-table-cell">Settings</th>
-      
-              <th>Final Score</th>
-  
-              <th class="d-none d-sm-table-cell">Recorded On</th>
-      
-            </tr>
-      
-          </thead>
-      
-          <tbody>
-            {% for score in top_scores %}
-                <tr>
-                  <td class="text-center">
-                      {{ score.user.username }}
-                  </td>
-                  <td class="text-center">
-                      {{ score.get_game_display }}
-                  </td>
-                  <td class="d-none d-sm-table-cell">
-                      {% if score.operation %}
-  
-                              Operation: {{ score.get_operation_display }} <br>
-                              Max number: {{ score.max_number}}
-      
-                      {% else %}
-      
-                          Word Length: {{ score.get_word_length_display }} <br>
-                          Total Words: {{ score.total_words }}
-                      
-                      {% endif %}
-                  </td>
-                  <td class="text-center">
-                    <a href="{{ score.get_absolute_url }}">
-                      {{ score.score }}
-                    </a>
-                  </td>
-                  <td class="d-none d-sm-table-cell">
-                    {{ score.created|date:'DATE_FORMAT' }}
-                  </td>
-                </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+  <div class="table-responsive bg-light shadow-lg mb-5">
+    <table class="table table-striped">
+      <thead class="text-center">
+        <tr>
+          <th>Player</th>
 
+          <th>Game</th>
+      
+          <th class="d-none d-sm-table-cell">
+            Settings
+          </th>
+  
+          <th>Final Score</th>
 
+          <th class="d-none d-sm-table-cell">
+            Recorded On
+          </th>      
+        </tr>
+      </thead>
+      <tbody>
+        {% for score in top_scores %}
+          <tr>
+            <td class="text-center">
+                {{ score.user.username }}
+            </td>
+            <td class="text-center">
+                {{ score.get_game_display }}
+            </td>
+            <td class="d-none d-sm-table-cell">
+              {% if score.operation %}
+                Operation: {{ score.get_operation_display }} <br>
+                Max number: {{ score.max_number}}
+              {% else %}
+                Word Length: {{ score.get_word_length_display }} <br>
+                Total Words: {{ score.total_words }}
+              {% endif %}
+            </td>
+            <td class="text-center">
+              <a href="{{ score.get_absolute_url }}">
+                {{ score.score }}
+              </a>
+            </td>
+            <td class="d-none d-sm-table-cell">
+              {{ score.created|date:'DATE_FORMAT' }}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 
 {% endblock %}

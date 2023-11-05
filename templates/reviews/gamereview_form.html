@@ -13,21 +13,25 @@
       </div>
       <div class="col-md-7">
         <div class="card shadow-lg my-3 p-3">
-            <div class="card-header text-center display-5 mb-2">Game Review</div>
+          <div class="card-header text-center display-5 mb-2">Game Review</div>
             <form method="post" class="form-outline form-white mb-4" novalidate>
-                {% csrf_token %}
-                <div class="row">
-                    <div class="col-md-6 mb-0">
-                        {{ form.game|as_crispy_field }}
-                    </div>
-                    <div class="col-md-6 mb-0">
-                        {{ form.rating|as_crispy_field }}
-                    </div>
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-0">
+                  {{ form.game|as_crispy_field }}
                 </div>
-                {{ form.review|as_crispy_field }}
-                <button class="form-control btn btn-outline-light btn-lg btn--raised rounded-3">
-                    Send
-                </button>
+                <div class="col-md-6 mb-0">
+                  {{ form.rating|as_crispy_field }}
+                </div>
+              </div>
+              {{ form.review|as_crispy_field }}
+              <div class="row">
+                <div class="col-6 offset-3">
+                  <button class="form-control btn btn-outline-light btn-lg btn--raised rounded-3">
+                      Send
+                  </button>
+                </div>
+              </div>
             </form>
         </div>
       </div>

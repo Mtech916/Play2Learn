@@ -36,7 +36,7 @@ html {
 body {
   font-family: 'Fira Code', monospace;
   overflow: auto;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   /* Chrome 10-25, Safari 5.1-6 */
   /* background: -webkit-linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1)); */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -48,6 +48,9 @@ body {
   color: var(--black);           /* or use --black */
 }
 
+.navbar {
+  transition: all 0.5s ease-in-out;
+}
 
 a, input, textarea, button, select {
   font-family: 'Fira Code', monospace;
@@ -111,6 +114,38 @@ a, input, textarea, button, select {
 
 #div_id_dob label {
   display: block !important;
+}
+
+/* To Top Button */
+.to-top-btn {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #44434a;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.to-top-btn:hover {
+  background-color: #1d1d21;
+}
+
+.to-top-btn {
+  img {
+    margin-bottom: 0.25rem;
+    width: 18px;
+  }
+}
+
+.show {
+  opacity: 1;
 }
 
 /* .text--color {

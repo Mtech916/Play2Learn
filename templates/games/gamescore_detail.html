@@ -2,53 +2,67 @@
 
 {% block title %}Score Details{% endblock %}
 {% block main %}
-  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3" style="max-width: 30rem">
-    <div class="card-header text-center fw-bold mb-2 text-uppercase">
-        {{ gamescore.get_game_display }}
-    </div>
-    <div class="card-body">
-      <h5 class="card-title text-center text--color">
-        Score Card
-      </h5>
-      {% if gamescore.user.avatar %}
-          <img src="{{ gamescore.user.avatar.url }}" alt="{{ gamescore.user.username }}"
-            class="mt-1 rounded float-start me-2" width="150" height="150">
-      {% endif %}
-      <div class="golden-text">
-        <p>
-          Player: {{ gamescore.user.username }} 
-        </p>
-        <p>
-          Final Score = {{ gamescore.score }}
-        </p>
-        {% if gamescore.game == 'MATH' %}
-        <p>
-          Operation => {{ gamescore.get_operation_display }}
-        </p>
-        <p>
-          Max Number: {{ gamescore.max_number }}
-        </p>
-        {% else %}
-        <p>
-          Word Length: {{ gamescore.get_word_length_display }}
-        </p>
-        <p>
-          Total Words Available:  {{ gamescore.total_words }}
-        </p>
-        {% endif %}
-        {% if gamescore.user == user %}
-        <a href="{% url 'games:delete' gamescore.slug %}" class="btn btn-danger btn-sm float-end me-2">
-          <i class="far fa-trash-alt"></i>
-        </a>
-        {% endif %}
+  <div class="container">
+    <div class="row my-4">
+      <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="card shadow-lg my-3">
+          <div class="d-flex flex-column align-items-center justify-content-center text-center text-uppercase mt-2">
+            <h5 class="badge bg-primary">
+              Score Card
+            </h5>
+            <h2 class="fw-bold">{{ gamescore.get_game_display }}</h1>
+          </div>
+          <div class="card-body">
+            <div class="row mx-auto">
+              <div class="col-md-6 text-left d-flex justify-content-center align-items-center p-0">
+                {% if gamescore.user.avatar %}
+                  <img src="{{ gamescore.user.avatar.url }}" alt="{{ gamescore.user.username }}"
+                    class="rounded-3" width="150" height="150">
+                {% endif %}
+              </div>
+              <div class="col-md-6 my-3 p-0">
+                <p class="mb-1">
+                  Player: {{ gamescore.user.username }} 
+                </p>
+                <p class="mb-1">
+                  Final Score = {{ gamescore.score }}
+                </p>
+                {% if gamescore.game == 'MATH' %}
+                <p class="mb-1">
+                  => <span class="text-success">{{ gamescore.get_operation_display }}</span>
+                </p>
+                <p class="mb-1">
+                  Max Number: {{ gamescore.max_number }}
+                </p>
+                {% else %}
+                <p class="mb-1">
+                  => <span class="text-success">{{ gamescore.get_word_length_display }}</span>
+                </p>
+                <p class="mb-1">
+                  Total Words Available:  {{ gamescore.total_words }}
+                </p>
+                {% endif %}
+              </div>
+              <div class="row">
+                <div class="col-md-6 offset-md-6">
+                  <div class="d-grid">
+                    {% if gamescore.user == user %}
+                    <a href="{% url 'games:delete' gamescore.slug %}" class="btn btn-danger">
+                      <i class="far fa-trash-alt"></i>
+                    </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small>
+              Created on: {{ gamescore.created|date }} <br>
+            </small>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card-footer">
-      <small>
-        
-        
-        Created on: {{ gamescore.created }} <br>
-      </small>
     </div>
   </div>
 {% endblock %}

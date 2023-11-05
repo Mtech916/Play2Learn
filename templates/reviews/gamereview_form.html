@@ -1,24 +1,37 @@
 {% extends '_base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block title %}Game Review Form{% endblock %}
 {% block main %}
-    <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 p-3" style="max-width: 40rem">
-        <div class="card-header text-center fw-bold mb-2 text-uppercase">Game Review</div>
-        <form method="post" class="form-outline form-white mb-4" novalidate>
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-md-6 mb-0">
-                    {{ form.game|as_crispy_field }}
+  <div class="container">
+    <div class="row mt-4">
+      <div class="d-none d-md-block col-md-5">
+        <div class="image-container shadow">
+          <img src="{% static 'images/stars.jpg' %}" alt="Galaxy Stars" class="img-fluid mt-3 rounded-3">
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="card shadow-lg my-3 p-3">
+            <div class="card-header text-center display-5 mb-2">Game Review</div>
+            <form method="post" class="form-outline form-white mb-4" novalidate>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-0">
+                        {{ form.game|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6 mb-0">
+                        {{ form.rating|as_crispy_field }}
+                    </div>
                 </div>
-                <div class="col-md-6 mb-0">
-                    {{ form.rating|as_crispy_field }}
-                </div>
-            </div>
-            {{ form.review|as_crispy_field }}
-            <button class="form-control btn btn-outline-light btn-lg btn--raised rounded-3">
-                Send
-            </button>
-        </form>
+                {{ form.review|as_crispy_field }}
+                <button class="form-control btn btn-outline-light btn-lg btn--raised rounded-3">
+                    Send
+                </button>
+            </form>
+        </div>
+      </div>
     </div>
+      
+  </div>
 {% endblock %}

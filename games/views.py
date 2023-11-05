@@ -37,9 +37,27 @@ class GameScoreDetailView(LoginRequiredMixin, DetailView):
 
 class LeaderBoardView(ListView):
     model = GameScore
-    ordering = ["-score", "game", "-created"]
-    paginate_by = 10
     context_object_name = "top_scores"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["username"] = self.request.user.username
+
+        leaderboard = GameScore.objects.order_by("-score", "-created")[:10]
+
+        if leaderboard:
+            first_place = leaderboard[0]
+            second_place = leaderboard[1] if len(leaderboard) > 1 else None
+            third_place = leaderboard[2] if len(leaderboard) > 2 else None
+
+        context["first_place"] = first_place
+        context["second_place"] = second_place
+        context["third_place"] = third_place
+
+        return context
+
+    def get_queryset(self):
+        return GameScore.objects.order_by("-score", "game", "-created")[:10]
 
 
 class MathFactsView(TemplateView):
@@ -60,11 +78,10 @@ class MyScoresView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context["username"] = self.request.user.username
 
+        # Ordering and Direction
         order_fields, order_key, direction = self.get_order_settings()
-
         context["order"] = order_key
         context["direction"] = direction
-
         context["order_fields"] = list(order_fields.keys())[:-1]
 
         return context

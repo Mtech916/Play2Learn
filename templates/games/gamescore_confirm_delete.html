@@ -2,13 +2,27 @@
 
 {% block title %}Confirm Delete Score{% endblock %}
 {% block main %}
-  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
-    <form method="post">
-        {% csrf_token %}
-        <p><strong>Are you sure you want to delete this {{ gamescore.game }} score?</strong></p>
-      <p>{{ gamescore.score }}</p>
-      <button class="btn btn-outline-light btn-lg btn--raised rounded-3 form-control">Confirm</button>
-    </form>
-    </form>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card shadow-lg border-0 my-3 text-center">
+        <form method="post" class="mt-2">
+          {% csrf_token %}
+          <p>
+            <strong>
+              Are you sure you want to delete this <span class="text-success">{{ gamescore.game }}</span> score?
+            </strong>
+          </p>
+          <p class="fs-3 fw-bold text-primary">{{ gamescore.score }}</p>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 my-3">
+              <button class="btn btn-outline-light btn-lg btn--raised rounded-3 form-control">Confirm</button>
+            </div>
+          </div>
+        </form>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 {% endblock %}

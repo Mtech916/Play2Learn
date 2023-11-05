@@ -2,13 +2,29 @@
 
 {% block title %}Confirm Delete Review{% endblock %}
 {% block main %}
-  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
-    <form method="post">
-        {% csrf_token %}
-        <p><strong>Are you sure you want to delete this {{ gamereview.game }} review?</strong></p>
-      <p>{{ gamereview.review }}</p>
-      <button class="btn btn-outline-light btn-lg btn--raised rounded-3 form-control">Confirm</button>
-    </form>
-    </form>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card shadow-lg border-0 my-3 text-center">
+        <form method="post" class="mt-2">
+          {% csrf_token %}
+          <p>
+            <strong>
+              Are you sure you want to delete this <span class="text-success">{{ gamereview.game }}</span> review?
+            </strong>
+          </p>
+          <q class="text-center">
+            {{ gamereview.review }}
+          </q>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 my-3">
+              <button class="btn btn-outline-light btn--raised rounded-3 form-control">Confirm</button>
+            </div>
+          </div>
+        </form>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 {% endblock %}

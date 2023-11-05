@@ -2,49 +2,89 @@
 
 {% block title %}Game Reviews{% endblock %}
 {% block main %}
-
-<div class="card bg--primary--color mx-auto my-3" style="width: 60rem;">
-    <div class="card-header text-center fw-bold mb-2">
+<div class="container">
+  <div class="row bg-light my-4">
+    <div class="col-sm-4 offset-sm-2 text-center mb-3">
       <h1>Game Reviews</h1>
-      <small>Our Scores from our gamer community!</small>
+      <small>Our Scores from the gamer community!</small>
+      <div class="pt-2">
+        <a class="btn btn-outline-light btn-md btn--raised rounded-3" href="{% url 'reviews:create' %}">
+          + New Review
+        </a>
+      </div>
     </div>
-    <div class="table-responsive">
     
-      <table class="table table-striped" style="min-width: 500px">
+    <div class="col-sm-4 offset-sm-2 offset-md-0">
+      <div class="card shadow">
+        <div class="card-body text-center">
+          <h3 class="display-3 fw-semibold">
+            <i class="fas fa-star text-warning"></i> {{ average_rating|floatformat:1 }}
+          </h3>
+          <p>Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="table-responsive bg-light shadow-lg">
+      <table class="table table-striped">
         <thead>
-          
           <tr>
-    
-            <th><a href="#">Rating</a></th>
-            
-            <th><a href="#">Game</a></th>
+            {% if request.GET.order == 'rating' and request.GET.direction == 'asc' %}
+            <th class="d-none d-sm-block">
+              <a href="?order=rating&direction=desc">
+                Rating
+              </a>
+            </th>
+            {% else %}
+            <th class="d-none d-sm-block">
+              <a href="?order=rating&direction=asc">
+                Rating
+              </a>
+            </th>
+            {% endif %}
+
+            {% if request.GET.order == 'game' and request.GET.direction == 'asc' %}
+            <th>
+              <a href="?order=game&direction=desc">
+                Game
+              </a>
+            </th>
+            {% else %}
+            <th>
+              <a href="?order=game&direction=asc">
+                Game
+              </a>
+            </th>
+            {% endif %}
         
-            <th><a href="#" class="float-start">Review</a></th>
-    
-            <th><a href="#">By</a></th>
-    
+            <th>
+              <span class="float-start">Review</span>  
+            </th>
+
+            <th>
+              <span class="float-start">By</span>
+            </th>
           </tr>
-    
         </thead>
     
         <tbody>
           {% for review in reviews %}
               <tr>
-                <td class="text-nowrap">
+                <td class="d-none d-sm-table-cell text-nowrap">
                     {{ review.game_rating|safe }}
                 </td>
                 <td>
                     {{ review.get_game_display }}
                 </td>
-                <td class="text-ellipsis">
-                    <a href="{% url 'reviews:details' review.slug %}">
-                        <q>
-                            {{ review.review }}
-                        </q>
-                    </a>
+                <td>
+                  <a href="{% url 'reviews:details' review.slug %}">
+                    <q>
+                      {{ review.review }}
+                    </q>
+                  </a>
                 </td>
                 <td class="text-center">
-                        {{ review.user.username }}
+                  {{ review.user.username }}
                 </td>
               </tr>
           {% endfor %}

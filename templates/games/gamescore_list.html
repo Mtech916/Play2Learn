@@ -2,68 +2,123 @@
 
 {% block title %}Leader Board{% endblock %}
 {% block main %}
-
-<div class="card bg--primary--color mx-auto my-3" style="width: 60rem;">
-    <div class="card-header text-center fw-bold mb-2">
-      <h1>Leadboard</h1>
-      <small>Top 10 Scores</small>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12 d-flex">
+      <h1 class="display-3">Leadboard</h1>
+      <div>
+        <span class="badge bg-primary bg-gradient rounded-3">
+          Top 10 Scores
+        </span>
+      </div>
     </div>
-    <div class="table-responsive">
-    
-      <table class="table table-striped" style="min-width: 500px">
-        <thead class="text-center">
-          
-          <tr>
-    
-            <th><a href="#">Player</a></th>
+  </div>
+
+
+  <div class="row my-4">
+    <div class="col-md-4 mb-4">
+      <div class="card shadow border-0">
+        <div class="card-title mx-auto mt-3">
+          <i class="fa-solid fa-trophy fa-4x text-warning"></i> <span class="display-5 fw-semibold">1st</span> 
+        </div>
+        {% if first_place %}
+        <span class="badge bg-warning bg-gradient mx-auto w-50">{{ first_place.get_game_display }}</span>
+        <span class="badge bg-primary bg-gradient mx-auto w-50">Final Score => {{ first_place.score }}</span>
+        <p class="h3 card-text text-center py-2">
+          {{ first_place.user.username }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card shadow text-center border-0">
+        <div class="card-title mt-3">
+          <i class="fa-solid fa-trophy fa-4x text-secondary"></i> <span class="display-5 fw-semibold">2nd</span> 
+        </div>
+        {% if second_place %}
+        <span class="badge bg-secondary bg-gradient mx-auto w-50">{{ second_place.get_game_display }}</span>
+        <span class="badge bg-primary bg-gradient mx-auto w-50">Final Score => {{ second_place.score }}</span>
+        <p class="h3 card-text py-2">
+          {{ second_place.user.username }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card shadow text-center border-0">
+        <div class="card-title mt-3">
+          <i class="fa-solid fa-trophy fa-4x text-success"></i> <span class="display-5 fw-semibold">3rd</span> 
+        </div>
+        {% if third_place %}
+        <span class="badge bg-success bg-gradient mx-auto w-50">{{ third_place.get_game_display }}</span>
+        <span class="badge bg-primary bg-gradient mx-auto w-50">Final Score => {{ third_place.score }}</span>
+        <p class="h3 card-text py-2">
+          {{ third_place.user.username }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  
+      <div class="table-responsive bg-light shadow-lg mb-5">
+      
+        <table class="table table-striped">
+          <thead class="text-center">
             
-            <th><a href="#">Game</a></th>
-        
-            <th><a href="#" class="float-start">Settings</a></th>
-    
-            <th><a href="#">Final Score</a></th>
-
-            <th><a href="#">Recorded On</a></th>
-    
-          </tr>
-    
-        </thead>
-    
-        <tbody>
-          {% for score in top_scores %}
-              <tr>
-                <td class="text-center">
-                    {{ score.user.username }}
-                </td>
-                <td class="text-center">
-                    {{ score.get_game_display }}
-                </td>
-                <td>
-                    {% if score.operation %}
-
-                            Operation: {{ score.get_operation_display }} <br>
-                            Max number: {{ score.max_number}}
-    
-                    {% else %}
-    
-                        Word Length: {{ score.get_word_length_display }} <br>
-                        Total Words: {{ score.total_words }}
-                    
-                    {% endif %}
-                </td>
-                <td class="text-center">
-                    <a href="{{ score.get_absolute_url }}" class="golden-text">
-                        {{ score.score }}
+            <tr>
+      
+              <th>Player</th>
+              
+              <th>Game</th>
+          
+              <th class="d-none d-sm-table-cell">Settings</th>
+      
+              <th>Final Score</th>
+  
+              <th class="d-none d-sm-table-cell">Recorded On</th>
+      
+            </tr>
+      
+          </thead>
+      
+          <tbody>
+            {% for score in top_scores %}
+                <tr>
+                  <td class="text-center">
+                      {{ score.user.username }}
+                  </td>
+                  <td class="text-center">
+                      {{ score.get_game_display }}
+                  </td>
+                  <td class="d-none d-sm-table-cell">
+                      {% if score.operation %}
+  
+                              Operation: {{ score.get_operation_display }} <br>
+                              Max number: {{ score.max_number}}
+      
+                      {% else %}
+      
+                          Word Length: {{ score.get_word_length_display }} <br>
+                          Total Words: {{ score.total_words }}
+                      
+                      {% endif %}
+                  </td>
+                  <td class="text-center">
+                    <a href="{{ score.get_absolute_url }}">
+                      {{ score.score }}
                     </a>
-                </td>
-                <td class="text-center">
+                  </td>
+                  <td class="d-none d-sm-table-cell">
                     {{ score.created|date:'DATE_FORMAT' }}
-                </td>
-              </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+                  </td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+
 </div>
 
 {% endblock %}

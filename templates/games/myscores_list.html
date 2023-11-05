@@ -1,15 +1,34 @@
 {% extends "_base.html" %}
+{% load static %}
 
+{% block javascript %} 
+  {{ block.super }}
+  <script src="{% static 'js/typing_effect.js' %}" defer></script>
+{% endblock %}
 {% block title %}My Scores{% endblock %}
 {% block main %}
-
-
-
-<div class="card bg--primary--color mx-auto my-3" style="width: 60rem;">
-    <div class="card-header text-center fw-bold mb-2">
-      <h1>Score Board</h1>
-      <h2>Player: {{ username }}</h2>
-      <form>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-12 d-flex">
+      <h1 class="display-3">ScoreBoard</h1>
+      <div>
+        <span class="badge bg-black bg-gradient rounded-3">Player: {{ username }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-md-10 offset-md-1 d-flex">
+      <p class="fs-5">
+        <span id="typing-text-1"></span> <span id="typing-text-2" class="fs-4 fw-semibold text-danger"></span>
+      </p>
+      <div id="switch-display" class="ms-sm-3">
+        <a href="{% url 'games:leaderboard' %}" id="typing-text-3" class="btn btn-sm btn-primary bg-gradient"></a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 mx-auto">
+      <form class="d-none d-sm-block text-center my-3">
         <label for="order">Order By:</label>
         <select name="order" id="order">
           {% for field in order_fields %}
@@ -20,78 +39,77 @@
         </select>
         <input type="radio" name="direction" id="asc" value="asc"
           {% if direction == 'asc' %}checked{% endif %}
-        >
-        <label for="asc">ASC</label>
+          >
+          <label for="asc">ASC</label>
         <input type="radio" name="direction" id="desc" value="desc"
           {% if direction == 'desc' %}checked{% endif %}
         >
         <label for="desc">DESC</label>
-        <button type="submit">Sort</button>
+        <button type="submit" class="btn btn-success bg-gradient">Sort</button>
       </form>
-
     </div>
-    <div class="table-responsive">
-    
-      <table class="table table-striped" style="min-width: 500px">
-        <thead class="text-center">
+  </div>
+      <div class="table-responsive bg-light shadow-lg">
+      
+        <table class="table table-striped">
+          <thead class="text-center">
+            <tr>
+              {% if request.GET.order == 'game' and request.GET.direction == 'asc' %}
+              <th><a href="?order=game&direction=desc" class="text-decoration-none">Game</a></th>
+              {% else %}
+              <th><a href="?order=game&direction=asc" class="text-decoration-none">Game</a></th>
+              {% endif %}
           
-          <tr>
-            {% if request.Get.order == 'game' and request.GET.direction == 'asc' %}
-            <th><a href="?order=game&direction=desc">Game</a></th>
-            {% else %}
-            <th><a href="?order=game&direction=asc">Game</a></th>
-            {% endif %}
-        
-            <th><span class="float-start">Settings</span></th>
-    
-            {% if request.GET.order == 'score' and request.GET.direction == 'asc' %}
-            <th><a href="?order=score&direction=desc">Final Score</a></th>
-            {% else %}
-            <th><a href="?order=score&direction=asc">Final Score</a></th>
-            {% endif %}
-
-            {% if request.GET.order == 'created' and request.GET.direction == 'asc' %}
-            <th><a href="?order=created&direction=desc">Created On</a></th>
-            {% else %}
-            <th><a href="?order=created&direction=asc">Created On</a></th>
-            {% endif %}
-
-          </tr>
-    
-        </thead>
-    
-        <tbody>
-          {% for score in my_scores %}
-              <tr>
-                <td class="text-center">
-                    {{ score.get_game_display }}
-                </td>
-                <td>
-                    {% if score.operation %}
-
-                            Operation: {{ score.get_operation_display }} <br>
-                            Max number: {{ score.max_number}}
-    
-                    {% else %}
-    
-                        Word Length: {{ score.get_word_length_display }} <br>
-                        Total Words: {{ score.total_words }}
-                    
-                    {% endif %}
-                </td>
-                <td class="text-center">
-                    <a href="{{ score.get_absolute_url }}" class="golden-text">
-                        {{ score.score }}
-                    </a>
-                </td>
-                <td class="text-center">
-                    {{ score.created|date:'DATE_FORMAT' }}
-                </td>
-              </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+              <th class="d-none d-md-table-cell"><span class="float-start">Settings</span></th>
+      
+              {% if request.GET.order == 'score' and request.GET.direction == 'asc' %}
+              <th><a href="?order=score&direction=desc" class="text-decoration-none">Final Score</a></th>
+              {% else %}
+              <th><a href="?order=score&direction=asc" class="text-decoration-none">Final Score</a></th>
+              {% endif %}
+  
+              {% if request.GET.order == 'created' and request.GET.direction == 'asc' %}
+              <th class="d-none d-sm-table-cell"><a href="?order=created&direction=desc" class="text-decoration-none">Created On</a></th>
+              {% else %}
+              <th class="d-none d-sm-table-cell"><a href="?order=created&direction=asc" class="text-decoration-none">Created On</a></th>
+              {% endif %}
+  
+            </tr>
+      
+          </thead>
+      
+          <tbody>
+            {% for score in my_scores %}
+                <tr>
+                  <td class="text-center">
+                      {{ score.get_game_display }}
+                  </td>
+                  <td class="d-none d-md-table-cell">
+                      {% if score.operation %}
+  
+                              Operation: {{ score.get_operation_display }} <br>
+                              Max number: {{ score.max_number}}
+      
+                      {% else %}
+      
+                          Word Length: {{ score.get_word_length_display }} <br>
+                          Total Words: {{ score.total_words }}
+                      
+                      {% endif %}
+                  </td>
+                  <td class="fs-4 text-center">
+                      <a href="{{ score.get_absolute_url }}" class="text-decoration-none">
+                          {{ score.score }}
+                      </a>
+                  </td>
+                  <td class="d-none d-sm-table-cell text-center">
+                      {{ score.created|date:'DATE_FORMAT' }}
+                  </td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
 </div>
 
 {% include 'includes/pagination.html' %}

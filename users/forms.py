@@ -25,7 +25,7 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ("email", "username", "first_name", "last_name", "dob", "avatar")
         widgets = {
             "dob": forms.SelectDateWidget(
-                attrs={"style": "width: 25%; display: inline-flex; margin: 0 1%"},
+                attrs={"style": "width: 31%; display: inline-flex; margin: 0 1%"},
                 years=BIRTH_YEAR_CHOICES,
             )
         }

@@ -43,16 +43,77 @@ body {
   /* background: linear-gradient(to right, rgba(61, 165, 217, 0.5), rgba(41, 145, 197, 1)); */
   /* background: radial-gradient(circle at center, var(--gunmetal-grey), #465362, LightBlue, var(--text-beige)); */
 
-  background: linear-gradient(to right, var(--gunmetal-grey), #465362, LightBlue, var(--text-beige));
+  /* background: linear-gradient(to right, var(--gunmetal-grey), #465362, LightBlue, var(--text-beige)); */
 
-  color: var(--text-beige);           /* or use --black */
+  color: var(--black);           /* or use --black */
 }
+
 
 a, input, textarea, button, select {
   font-family: 'Fira Code', monospace;
 }
 
-.text--color {
+/* My Review Cards */
+.card--bg-img {
+  background: url('../images/blue-design.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.card--bg-img-2 {
+  background: url('../images/dark-geometric.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.card--bg-img::after,
+.card--bg-img-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card--bg-img .card-title,
+.card--bg-img-2 .card-title,
+.card--bg-img p,
+.card--bg-img-2 p,
+.card--bg-img span,
+.card--bg-img-2 span {
+  z-index: 10;
+}
+
+/* Registration Page */
+.imagine-img {
+  background: url('../images/look_rev.jpeg') bottom center no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.imagine-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.imagine-img p {
+  z-index: 10;
+}
+
+#div_id_dob label {
+  display: block !important;
+}
+
+/* .text--color {
   color: var(--text-beige);
 }
 
@@ -66,7 +127,7 @@ a:hover {
 
 a:active {
   color: var(--text-active);
-}
+} */
 
 a.trash-color {
   color: var(--primary);
@@ -133,6 +194,7 @@ a.trash-color {
 
 .dd--game:hover {
   background-color: var(--primary);
+  color: #fff;
 }
 
 /* MESSAGE STYLES */

@@ -34,7 +34,7 @@ class GameReview(models.Model):
 
     @property
     def game_rating(self):
-        full_star = '<i class="fa-solid fa-star" style="color: #ffff00;"></i>'
+        full_star = '<i class="fa-solid fa-star text-warning"></i>'
         stars = ""
 
         if self.rating == 5:
@@ -58,4 +58,4 @@ class GameReview(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"Review by {self.user.username}"
+        return f"{self.rating} star review by {self.user.username}"

@@ -2,15 +2,21 @@
 
 {% block title %}403: Permission Denied{% endblock %}
 {% block main %}
-  <div class="card border-primary bg--primary--color m-auto mt-3 mb-3 text-center" style="max-width: 30rem">
-    <div class="card-header fw-bold mb-2 text-uppercase">
-      What are you trying to do?
-    </div>
-    <div class="card-body text-primary">
-      <h5 class="card-title">That’s not Allowed.</h5>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">403: Permission Denied</small>
+<div class="container">
+  <div class="row my-4">
+    <div class="col-md-8 offset-md-2">
+      <div class="card shadow-lg border-0 my-3 text-center">
+        <div class="card-header fw-bold mb-2 text-uppercase">
+          What are you trying to do?
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">That’s not Allowed.</h5>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">403: Permission Denied</small>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 {% endblock %}

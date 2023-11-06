@@ -80,32 +80,28 @@
       
           <tbody>
             {% for score in my_scores %}
-                <tr>
-                  <td class="text-center">
-                      {{ score.get_game_display }}
-                  </td>
-                  <td class="d-none d-md-table-cell">
-                      {% if score.operation %}
-  
-                              Operation: {{ score.get_operation_display }} <br>
-                              Max number: {{ score.max_number}}
-      
-                      {% else %}
-      
-                          Word Length: {{ score.get_word_length_display }} <br>
-                          Total Words: {{ score.total_words }}
-                      
-                      {% endif %}
-                  </td>
-                  <td class="fs-4 text-center">
-                      <a href="{{ score.get_absolute_url }}" class="text-decoration-none">
-                          {{ score.score }}
-                      </a>
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center">
-                      {{ score.created|date:'DATE_FORMAT' }}
-                  </td>
-                </tr>
+              <tr>
+                <td class="text-center">
+                  {{ score.get_game_display }}
+                </td>
+                <td class="d-none d-md-table-cell">
+                  {% if score.operation %}
+                    Operation: {{ score.get_operation_display }} <br>
+                    Max number: {{ score.max_number}}
+                  {% else %}
+                    Word Length: {{ score.get_word_length_display }} <br>
+                    Total Words: {{ score.total_words }}
+                  {% endif %}
+                </td>
+                <td class="fs-4 text-center">
+                  <a href="{{ score.get_absolute_url }}" class="text-decoration-none">
+                    {{ score.score }}
+                  </a>
+                </td>
+                <td class="d-none d-sm-table-cell text-center">
+                  {{ score.created|date:'DATE_FORMAT' }}
+                </td>
+              </tr>
             {% endfor %}
           </tbody>
         </table>

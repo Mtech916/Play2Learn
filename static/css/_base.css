@@ -56,6 +56,28 @@ a, input, textarea, button, select {
   font-family: 'Fira Code', monospace;
 }
 
+/* Home page background */
+.available-games {
+  background: url('../../static/images/cool_bg.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.available-games::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.funky-bg {
+  z-index: 10;
+  color: #fff;
+}
+
 /* My Review Cards */
 .card--bg-img {
   background: url('../images/blue-design.jpg') center center no-repeat;
@@ -146,6 +168,14 @@ a, input, textarea, button, select {
 
 .show {
   opacity: 1;
+}
+
+footer#footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
 }
 
 /* .text--color {

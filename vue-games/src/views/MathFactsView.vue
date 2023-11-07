@@ -1,11 +1,11 @@
 <template>
-  <main id="main-container">
+  <div class="container">
 
-    <h1 id="game-heading" class="row-5 justify-content-center text-center pt-4">Math Practice</h1>
+    <h1 id="game-heading" class="row-5 justify-content-center text-center mt-4">Math Practice</h1>
 
     <router-view></router-view>
 
-</main>
+  </div>
 </template>
 
 <script>

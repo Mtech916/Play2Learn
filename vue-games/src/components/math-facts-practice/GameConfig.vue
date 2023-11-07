@@ -1,30 +1,38 @@
 <template>
-  <div id="config-container">
-    <SelectInput 
-        :currentValue="operation" 
-        label="Operation" id="operation"  
-        v-model="operation" 
-        :options="operations"
-        @input="(o) => (this.operation = o)" 
-      />
-    <SelectInput 
-        :currentValue="maxNumber" 
-        label="Maximum Number" 
-        id="max-number" 
-        v-model="maxNumber" 
-        :options="numbers" 
-        @input="(n) => (this.maxNumber = n)"
-      />
-      <div class="row justify-content-center pt-3">
-        <div>
-          <ol class="list list-numbered fs-5">
-            <li class="list-item">Select an Opation</li>
-            <li class="list-item">Press <span class="fw-bold">Play!</span></li>
-            <li class="list-item">How many problems can you solve in 30 seconds?</li>
-          </ol>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <SelectInput 
+            :currentValue="operation" 
+            label="Operation" id="operation"  
+            v-model="operation" 
+            :options="operations"
+            @input="(o) => (this.operation = o)" 
+          />
+        <SelectInput 
+            :currentValue="maxNumber" 
+            label="Maximum Number" 
+            id="max-number" 
+            v-model="maxNumber" 
+            :options="numbers" 
+            @input="(n) => (this.maxNumber = n)"
+          />
       </div>
-    <PlayButton @play-button-click="play"/>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ol class="list list-numbered fs-5">
+          <li class="list-item">Select an Opation</li>
+          <li class="list-item">Press <span class="fw-bold">Play!</span></li>
+          <li class="list-item">How many problems can you solve in 30 seconds?</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 offset-3">
+        <PlayButton @play-button-click="play"/>
+      </div>
+    </div>
   </div>
 </template>
 

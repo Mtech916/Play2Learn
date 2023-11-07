@@ -1,20 +1,17 @@
 <template>
-  <main id="home-view">
-    <div class="container-fluid">
-      <h1 class="d-flex flex-start text--lg py-5">Happy Clients Say...</h1>
-
-      <div class="row">
-        <ClientQuotes />
-  
-        <AvailableGames />
-      </div>
-      <div class="row">
+  <div class="container vh-75 my-5">
+    <div class="row">
+      <ClientQuotes />
+    </div>
+  </div>
+    <div class="available-games position-relative my-5">
+      <AvailableGames />
+    </div>
+    <div class="container">
+      <div class="row my-5">
         <h2 class="text-center">coming soon!</h2>
       </div>
-
     </div>
-  </main>
-
 </template>
 
 <script>

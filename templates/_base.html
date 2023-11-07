@@ -23,7 +23,7 @@
   <body>
     {% block body %}
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg text-black sticky-top">
+      <nav class="navbar navbar-expand-lg text-black fw-bold sticky-top">
         <div class="container">
           <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="me-1" />
           <a href="{% url 'pages:homepage' %}" class="navbar-brand">Play2Learn</a>
@@ -48,7 +48,7 @@
                 >
                   Games
                 </button>
-                <ul class="dropdown-menu shadow-lg bg-secondary bg-gradient bg-opacity-76">
+                <ul class="dropdown-menu shadow-lg bg-light">
                   <li>
                     <a href="{% url 'games:anagram-hunt' %}" 
                       class="dropdown-item dd--game"
@@ -76,7 +76,7 @@
                 >
                   Info
                 </button>
-                <ul class="dropdown-menu shadow-lg bg-secondary bg-gradient bg-opacity-76">
+                <ul class="dropdown-menu shadow-lg bg-light">
                   <li>
                     <a href="{% url 'games:leaderboard' %}" 
                       class="dropdown-item dd--game"
@@ -139,7 +139,7 @@
                     Me
                 {% endif %} 
                 </button>
-                <ul class="dropdown-menu shadow-lg bg-secondary bg-gradient bg-opacity-76">
+                <ul class="dropdown-menu shadow-lg bg-light">
                   {% if user.is_staff %}
                   <li>
                     <a href="/admin/" 
@@ -189,6 +189,7 @@
 
       <main>
         {% if messages %}
+        <div class="container">
           <ul>
             {% for message in messages %}
               <div class="alert message{{ message.tags }} alert-dismissible" role="alert">
@@ -202,13 +203,14 @@
               </div>
             {% endfor %}
           </ul>
+        </div>
         {% endif %}
 
         {% block main %}
         {% endblock %}
       </main>
 
-      <footer id="footer" class="bg-secondary bg-gradient bg-opacity-75 pb-2">
+      <footer id="footer" class="bg-light">
         <div class="container">
           <div class="row">
             <div class="d-none d-sm-block col-sm-8 d-sm-flex">
@@ -217,7 +219,7 @@
                   Play2Learn &copy; {% now 'Y' %}
               </p>
             </div>
-            <div class="col-12 d-flex justify-content-center col-sm-4 d-sm-flex justify-content-sm-end pt-2">
+            <div class="col-12 d-flex justify-content-center col-sm-4 d-sm-flex justify-content-sm-end py-2">
               <a href="{% url 'pages:contact-us' %}" class="text-decoration-none px-1">
                 <i class="fa-regular fa-envelope fa-2x text-black"></i>
               </a>
@@ -234,7 +236,7 @@
           </div>  
         </div>
       </footer>
-
+      
       <button id="to-top" class="to-top-btn">
         <img src="{% static 'images/up-arrow.png' %}" alt="Up Arrow">
       </button>

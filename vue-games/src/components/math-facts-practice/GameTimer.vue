@@ -1,5 +1,9 @@
 <template>
-  <strong>Time Left: {{ timeLeft }}</strong>  
+  <div class="col-6 d-flex justify-content-center">
+    <strong>
+      <span class="fs-4">Time:</span> <span class="fs-5">{{ timeLeft }}</span>
+    </strong>  
+  </div>
 </template>
 
 <script>

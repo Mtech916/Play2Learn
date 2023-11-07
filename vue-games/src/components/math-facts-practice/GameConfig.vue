@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="game-config" class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <SelectInput 
@@ -20,11 +20,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <ol class="list list-numbered fs-5">
-          <li class="list-item">Select an Opation</li>
-          <li class="list-item">Press <span class="fw-bold">Play!</span></li>
-          <li class="list-item">How many problems can you solve in 30 seconds?</li>
+      <div class="col-12 col-md-6 offset-md-3">
+        <ol class="">
+          <li>Select an Operation</li>
+          <li>Press <span class="fw-bold">Play!</span></li>
+          <li>30 seconds on the Clock</li>
+          <li>Score 1 point per correct answer</li>
+          <li>Highest Scores make it to the <span class="success">LeaderBoard</span></li>
         </ol>
       </div>
     </div>
@@ -83,3 +85,11 @@ export default {
 };
 
 </script>
+
+<style scoped>
+
+#game-config {
+  margin-bottom: 75px;
+}
+
+</style>

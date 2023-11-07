@@ -1,8 +1,8 @@
 <template>
-  <div id="equation" class="row fs-4 text-white">
-    <div class="col-5">{{ question }}</div>
-    <div class="col-2">=</div>
-    <div class="col-5">{{ answer }}</div>
+  <div id="equation" class="col-md-6 offset-md-3 text-center fs-4">
+    <div class="">
+      {{ question }} = {{ answer }}
+    </div>
   </div>
 </template>
 
@@ -21,10 +21,10 @@ export default {
 
 <style scoped>
 
-  #equation {
+  /* #equation {
     font-size: 1.6em;
     margin: auto;
     width: 90%;
-  }
+  } */
 
 </style>

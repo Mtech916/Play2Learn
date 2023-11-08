@@ -1,75 +1,73 @@
 <template>
 
   <!-- Results -->
-
-    <transition name="slide">
-      <template v-if="timeLeft === 0">
-        <div id="results-container" class="container">
-          <div class="row text-center">
-            <h2>Time's Up!</h2>
-            <strong class="big">You Answered</strong>
-            <div class="huge">{{ score }}</div>
-            <strong class="big">Questions Correctly</strong>
+  <transition name="slide">
+    <template v-if="timeLeft === 0">
+      <div id="results-container" class="container">
+        <div class="row text-center">
+          <h2>Time's Up!</h2>
+          <strong class="big">You Answered</strong>
+          <div class="huge">{{ score }}</div>
+          <strong class="big">Questions Correctly</strong>
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <div class="d-grid">
+            <button 
+              class="btn btn--raised btn-outline-light rounded-3 form-control m-1"
+              @click="restart()">
+                Play Again 
+            </button>
           </div>
-          <div class="d-flex flex-column justify-content-center align-items-center">
-            <div class="d-grid">
-              <button 
-                class="btn btn--raised btn-outline-light rounded-3 form-control m-1"
-                @click="restart()">
-                  Play Again 
-              </button>
-            </div>
-            <div class="d-grid">
-              <button 
-                class="btn btn-secondary rounded-3 form-control m-1"
-                @click="config()">
-                  Change Settings
-              </button>
-            </div>
+          <div class="d-grid">
+            <button 
+              class="btn btn-secondary rounded-3 form-control m-1"
+              @click="config()">
+                Change Settings
+            </button>
           </div>
         </div>
-      </template>
-    </transition>
+      </div>
+    </template>
+  </transition>
 
 <!-- Play Game -->
+  <transition name="slide-right">
+    <template v-if="timeLeft > 0">
+      <div id="play-container" class="container">
+        <div class="row border-bottom" id="scoreboard">
+            <GameScore :score="score" />
+            <GameTimer :timeLeft="timeLeft" />
+        </div>
 
-    <transition name="slide-right">
-      <template v-if="timeLeft > 0">
-        <div id="play-container" class="container">
-          <div class="row border-bottom" id="scoreboard">
-              <GameScore :score="score" />
-              <GameTimer :timeLeft="timeLeft" />
-          </div>
-
-          <div class="row">
-              <div :class="equationClass" id="equation">
-                <GameEquation 
-                    :question="question"
-                    :answer="+input"
-                    :answered="answered"
-                  />
-              </div>
-          </div>
-          <div class="row ms-2" id="buttons">
-            <div class="col-md-6 offset-md-3">
-              <button 
-                class="btn btn-primary number-button"
-                v-for="button in buttons" 
-                :key="button"
-                @click="setInput(button)"
-              >
-              {{ button }}</button>
-              <button 
-                class="btn btn-primary" 
-                id="clear-button"
-                @click="clear"
-              >
-              Clear</button>
+        <div class="row">
+            <div :class="equationClass" id="equation">
+              <GameEquation 
+                  :question="question"
+                  :answer="+input"
+                  :answered="answered"
+                />
             </div>
+        </div>
+        <div class="row ms-2" id="buttons">
+          <div class="col-md-6 offset-md-3">
+            <button 
+              class="btn btn-primary number-button"
+              v-for="button in buttons" 
+              :key="button"
+              @click="setInput(button)"
+            >
+            {{ button }}</button>
+            <button 
+              class="btn btn-primary" 
+              id="clear-button"
+              @click="clear"
+            >
+            Clear</button>
           </div>
         </div>
-      </template>
-    </transition>
+      </div>
+    </template>
+  </transition>
 </template>
   
 <script>

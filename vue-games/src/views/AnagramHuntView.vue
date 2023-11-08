@@ -1,5 +1,12 @@
 <template>
-  <h1 id="game-heading" class="row justify-content-center py-5">Anagram Hunt</h1>
+  <div class="row">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center my-4">
+      <h5 class="badge bg-primary">
+        Word <i class="fa-solid fa-puzzle-piece"></i>
+      </h5>
+      <h1>Anagram Hunt</h1>
+    </div>
+  </div>
 
   <AnagramConfig v-if="!gameStarted" @start-game="startGame" />
   <AnagramGamePlay v-else-if="gameStarted && !gameOver" :wordLength="wordLength" @end-game="onEndGame" @update-score="updateScore"/>
@@ -55,3 +62,12 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
     }
   }
 </script>
+
+
+<style scoped>
+
+h5.badge {
+  font-size: 1.1rem;
+}
+
+</style>

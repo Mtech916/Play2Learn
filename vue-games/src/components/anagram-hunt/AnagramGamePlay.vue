@@ -1,35 +1,51 @@
 <template>
-  <div id="anagram-game-play" class="row">
-    <h2 class="col-6 text-center h4 fw-bold">Score: {{ score }}</h2>
-    <h2 class="col-6 text-center h4 fw-bold">Time Left: {{ timeLeft }}</h2>
-    <hr>
-    
-    <div class="row justify-content-center">
-      
-      <p class="text-center fs-1">{{ currentWord }} ({{ currentAnagrams.length }} left)</p>
-      <label for="anagram-input" class="visually-hidden">Type Here:</label>
-      <input 
-        v-model="userInput"
-        @keyup.enter="checkAnswer"
-        type="text" 
-        id="anagram-input"
-        class="col-2 p-2"
-        name="anagram-input"
-        placeholder="type here"
-      >
-      <div class="row justify-content-center">
-        <ol class="col col-3 list list-numbered mt-3">
-          <li
-            v-for="anagram in guessedAnagrams"
-            :key="anagram"
-            class="list-item"
-          >
-            {{ anagram }}
-          </li>
-        </ol>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="pe-4 border-bottom pb-2">
+          <span class="fs-4">Score: {{ score }}</span>
+        </div>
+        <div class="border-bottom pb-2">
+          <span class="fs-4">Time Left: {{ timeLeft }}</span>
+        </div>
       </div>
       
     </div>
+    <div class="row mb-2">
+      <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+        <div class="pt-2">
+          <p class="fs-1">
+            {{ currentWord }} ({{ currentAnagrams.length }} left)
+          </p>
+        </div>
+        <div>
+          <label for="anagram-input" class="visually-hidden">Type Here:</label>
+          <input 
+            v-model="userInput"
+            @keyup.enter="checkAnswer"
+            type="text" 
+            id="anagram-input"
+            class="text-center"
+            name="anagram-input"
+            placeholder="type here"
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2 mb-5">
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+          <ol>
+            <li
+              v-for="anagram in guessedAnagrams"
+              :key="anagram"
+              class="list-item"
+            >
+              {{ anagram }}
+            </li>
+          </ol>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -51,7 +67,7 @@ import anagrams from '@/data/anagrams.js';
         guessedAnagrams: [],
         userInput: '',
         score: 0,
-        timeLeft: 60,
+        timeLeft: 3,
         timer: null,
       };
     },
@@ -143,12 +159,3 @@ import anagrams from '@/data/anagrams.js';
   }
 </script>
 
-<style scoped>
-
-#anagram-game-play {
-  font-size: 1.6em;
-  margin: auto;
-  width: 90%;
-}
-
-</style>

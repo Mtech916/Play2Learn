@@ -21,17 +21,17 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-6 offset-md-3">
-        <ol class="">
+        <ol>
           <li>Select an Operation</li>
-          <li>Press <span class="fw-bold">Play!</span></li>
-          <li>30 seconds on the Clock</li>
-          <li>Score 1 point per correct answer</li>
-          <li>Highest Scores make it to the <span class="success">LeaderBoard</span></li>
+          <li>Press Play!</li>
+          <li><span class="fs-5 fw-bold text-primary">30</span> seconds on the Clock</li>
+          <li>Score <span class="fs-5 fw-bold text-success">1</span> point per correct answer</li>
+          <li>Highest Scores earn <span class="fw-semibold fs-5">LeaderBoard</span> status</li>
         </ol>
       </div>
     </div>
     <div class="row">
-      <div class="col-6 offset-3">
+      <div class="col-12 d-flex flex-column align-items-center justify-content-center">
         <PlayButton @play-button-click="play"/>
       </div>
     </div>
@@ -91,5 +91,6 @@ export default {
 #game-config {
   margin-bottom: 75px;
 }
+
 
 </style>

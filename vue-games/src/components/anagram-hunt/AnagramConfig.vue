@@ -1,38 +1,39 @@
 <template>
-  <div id="anagram-config" class="container-fluid">
-    <div class="row justify-content-md-center">
-      
-      <div class="col col-sm-2 col-md-2 justify-content-center">
-        <label for="word-length">Word Length</label>
-      </div>
-      <div class="col col-sm-4 col-md-4 mb-3">
+  <div id="anagram-config" class="container">
+    <div class="row"> 
+      <div class="col-sm-6 offset-sm-3">
+        <label for="word-length" class="pe-2">Word Length</label>
+        
         <input 
-          type="number" 
-          id="word-length" 
-          class="p-1"
-          v-model="wordLength"
+        type="number" 
+        id="word-length" 
+        v-model="wordLength"
           name="word-length" 
-          placeholder="ex. 5"
-        >
+          placeholder="ex. 3"
+          >
       </div>
-      <div class="row justify-content-center pt-3">
-        <div class="col col-sm-6 col-md-6">
-          <ol class="list list-numbered fs-5">
-            <li class="list-item">Choose Word Length.</li>
-            <li class="list-item">Press <span class="fw-bold">Play!</span></li>
-            <li class="list-item">How many anagrams can you find in a minute?</li>
+
+    </div>
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3 mt-3">
+          <ol>
+            <li>Choose Word Length.</li>
+            <li>Press Play!</li>
+            <li><span class="fs-5 fw-bold text-primary">60</span> seconds on the Clock</li>
+            <li>Score <span class="fs-5 fw-bold text-success">5</span> points per correct answer</li>
+            <li>Highest Scores earn <span class="fw-semibold fs-5">LeaderBoard</span> status</li>
           </ol>
         </div>
-        <div class="row g-1 align-items-center justify-content-center">
-          <button 
-            class="col-sm-6 col-md-6 btn btn--raised btn-outline-light rounded-3 fs-5"
-            @click='play'
-          >
-            Play!
-          </button>
+        <div class="row">
+          <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+            <button 
+              class="btn btn--raised btn-outline-light rounded-3 fs-5"
+              @click='play'>
+              Play!
+            </button>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -57,7 +58,7 @@
 <style scoped>
 
 #anagram-config {
-  width: 800px;
+  margin-bottom: 80px;
 }
 
 </style>

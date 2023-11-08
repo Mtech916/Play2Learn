@@ -1,27 +1,30 @@
 <template>
-  <div id="anagram-final-results" class="row text-center">
-    <h1 class="times-up">Time's Up!</h1>
-    <p class="fs-1 fw-bold">You Got</p>
-    <p class="final-score">{{ score }}</p>
-    <p class="fw-bold ">Anagrams</p>
+  <div id="anagram-final-results" class="container">
+    <div class="row text-center mb-2">
+      <h2>Time's Up!</h2>
+      <strong class="big">You Got</strong>
+      <div class="huge">{{ score }}</div>
+      <strong class="big ">Anagrams</strong>
+    </div>
 
-    <div class="row g-1 align-items-center justify-content-center">
-      <button 
-        class="col-sm-6 col-md-6 btn btn--raised rounded-3 btn-outline-light"
-        @click="restartGame"
-      >
-        Play Again with Same Settings
-      </button>
-    </div>
-    <div class="row g-1 align-items-center justify-content-center">
-      <button 
-        class="col-sm-6 col-md-6 btn btn-secondary rounded-3"
+    <div id="settings-container" class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-grid mb-2">
+        <button 
+          class="btn btn--raised btn-outline-light rounded-3"
+          @click="restartGame"
+        >
+          Play Again
+        </button>
+      </div>
+      <div class="d-grid">
+        <button 
+        class="btn btn-secondary rounded-3"
         @click="backToConfig"
-      >
-        Back to Start Screen
-      </button>
+        >
+          Change Settings
+        </button>
+      </div>
     </div>
-    
   </div>
 </template>
 
@@ -44,18 +47,17 @@
 
 <style scoped>
 
-#anagram-final-results {
-  font-size: 1.6em;
-  margin: auto;
-  width: 60%;
-}
+/* Time's Up sytels */
+.big {
+    font-size: 1.5em;
+  }
 
-.times-up {
-  font-size: 2.75rem;
-}
+  .huge {
+    font-size: 5em;
+  }
 
-.final-score {
-  font-size: 5rem;
-}
+  #settings-container {
+    margin-bottom: 75px;
+  }
 
 </style>

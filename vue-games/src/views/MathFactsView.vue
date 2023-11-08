@@ -27,9 +27,8 @@ export default {
 
 <style scoped>
 
-#main-container {
-  margin: auto;
-  width: 380px;
+h5.badge {
+  font-size: 1rem;
 }
 
 

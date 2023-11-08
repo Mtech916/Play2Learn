@@ -7,12 +7,12 @@
 {% endblock %}
 {% block title %}My Scores{% endblock %}
 {% block main %}
-<div class="container">
+<div id="myscores_container" class="container">
   <div class="row my-4">
     <div class="col-12 d-flex">
       <h1 class="display-3">ScoreBoard</h1>
       <div>
-        <span class="badge bg-black bg-gradient rounded-3">Player: {{ username }}</span>
+        <span class="badge bg-primary rounded-3">Player: {{ username }}</span>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
         <span id="typing-text-1"></span> <span id="typing-text-2" class="fs-4 fw-semibold text-danger"></span>
       </p>
       <div id="switch-display" class="ms-sm-3">
-        <a href="{% url 'games:leaderboard' %}" id="typing-text-3" class="btn btn-sm btn-primary bg-gradient"></a>
+        <a href="{% url 'games:leaderboard' %}" id="typing-text-3" class="btn btn-sm btn-info bg-gradient"></a>
       </div>
     </div>
   </div>

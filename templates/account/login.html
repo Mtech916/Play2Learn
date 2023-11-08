@@ -10,7 +10,7 @@
 {% block title %}Log in{% endblock %}
 
 {% block main %}
-<div class="container">
+<div id="login-container" class="container">
   <div class="row my-4">
     <div class="col-md-6">
       <div class="card shadow-lg border-0 my-3">
@@ -23,7 +23,7 @@
             {% csrf_token %}
             {{ form|crispy }}
             <div class="row">
-              <div class="col-md-6 offset-md-3 my-3">
+              <div class="col-md-6 offset-md-3 mb-1">
                 <button class="form-control btn btn-outline-light btn--raised rounded-3">
                   LOG IN
                 </button>

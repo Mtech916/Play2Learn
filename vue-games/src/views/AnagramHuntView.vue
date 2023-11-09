@@ -20,6 +20,8 @@ import AnagramConfig from '../components/anagram-hunt/AnagramConfig.vue';
 import AnagramGamePlay from '../components/anagram-hunt/AnagramGamePlay.vue';
 import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
 
+import anagrams from '../data/anagrams.js';
+
   export default {
     name: 'AnagramHunt',
     components: {
@@ -49,7 +51,7 @@ import AnagramGameOver from '../components/anagram-hunt/AnagramGameOver.vue';
       },
       restartGame() {
         this.score = 0;
-        this.selectedAnagrams = [];
+        this.selectedAnagrams = [...anagrams[this.wordLength]];
         this.gameStarted = true;
         this.gameOver = false;
       },

@@ -7,7 +7,7 @@
         <div class="row text-center">
           <h2>Time's Up!</h2>
           <strong class="big">You Answered</strong>
-          <div class="huge">{{ score }}</div>
+          <div class="huge text-success">{{ score }}</div>
           <strong class="big">Questions Correctly</strong>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center">

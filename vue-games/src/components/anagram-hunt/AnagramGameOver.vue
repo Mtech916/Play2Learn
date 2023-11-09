@@ -3,7 +3,7 @@
     <div class="row text-center mb-2">
       <h2>Time's Up!</h2>
       <strong class="big">You Got</strong>
-      <div class="huge">{{ score }}</div>
+      <div class="huge text-success">{{ score }}</div>
       <strong class="big ">Anagrams</strong>
     </div>
 

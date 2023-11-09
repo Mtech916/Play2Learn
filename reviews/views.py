@@ -51,7 +51,7 @@ class GameReviewsThanksView(TemplateView):
     template_name = "reviews/thanks.html"
 
 
-class GameReviewsDeleteView(UserPassesTestMixin, DeleteView):
+class GameReviewsDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = GameReview
     success_url = reverse_lazy("reviews:reviews")
 
@@ -68,7 +68,7 @@ class GameReviewsDeleteView(UserPassesTestMixin, DeleteView):
         return self.request.user == obj.user
 
 
-class GameReviewsDetailView(LoginRequiredMixin, DetailView):
+class GameReviewsDetailView(DetailView):
     model = GameReview
     template_name = "reviews/gamereview_detail.html"
 
@@ -83,7 +83,7 @@ class GameReviewsUpdateView(SuccessMessageMixin, UserPassesTestMixin, UpdateView
         return self.request.user == obj.user
 
 
-class MyReviewsView(ListView):
+class MyReviewsView(LoginRequiredMixin, ListView):
     model = GameReview
     template_name = "reviews/myreviews_list.html"
     paginate_by = 10

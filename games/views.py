@@ -14,7 +14,7 @@ class AnagramHuntView(TemplateView):
     template_name = "games/anagram-hunt.html"
 
 
-class GameScoreDeleteView(UserPassesTestMixin, DeleteView):
+class GameScoreDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = GameScore
     success_url = reverse_lazy("games:game-scores")
 
@@ -31,7 +31,7 @@ class GameScoreDeleteView(UserPassesTestMixin, DeleteView):
         return self.request.user == obj.user
 
 
-class GameScoreDetailView(LoginRequiredMixin, DetailView):
+class GameScoreDetailView(DetailView):
     model = GameScore
 
 
@@ -57,7 +57,9 @@ class LeaderBoardView(ListView):
         return context
 
     def get_queryset(self):
-        return GameScore.objects.order_by("-score", "game", "-created")[:10]
+        qs = GameScore.objects.all()
+
+        return qs.order_by("-score", "game", "-created")[:10]
 
 
 class MathFactsView(TemplateView):

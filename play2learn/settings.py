@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = [  # Necessary for the Debug Toolbar
+    "127.0.0.1",
+]
+
 
 # Application definition
 
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "debug_toolbar",
     # Local Apps
     "common.apps.CommonConfig",
     "games.apps.GamesConfig",
@@ -69,6 +74,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Third-party middleware
     "allauth.account.middleware.AccountMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "play2learn.urls"

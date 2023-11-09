@@ -9,7 +9,6 @@
           <span class="fs-4">Time Left: {{ timeLeft }}</span>
         </div>
       </div>
-      
     </div>
     <div class="row mb-2">
       <div class="col-12 d-flex flex-column align-items-center justify-content-center">
@@ -32,36 +31,40 @@
         </div>
       </div>
     </div>
-
     <div class="row mt-2 mb-5">
-        <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-          <ol>
-            <li
-              v-for="anagram in guessedAnagrams"
-              :key="anagram"
-              class="list-item"
-            >
-              {{ anagram }}
-            </li>
-          </ol>
-        </div>
+      <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+        <ol>
+          <li
+            v-for="anagram in guessedAnagrams"
+            :key="anagram"
+            class="list-item"
+          >
+            {{ anagram }}
+          </li>
+        </ol>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 
-import anagrams from '@/data/anagrams.js';
-
   export default {
     name: 'AnagramGamePlay',
     props: {
       wordLength: Number,
+      anagramsToGuess: Array,
+    },
+    computed: {
+      clonedAnagramsToGuess() {
+        // Create a new array with cloned subarrays
+        return this.anagramsToGuess.map(subArray => [...subArray]);
+      },
     },
     data() {
       return {
-        selectedAnagrams: [],
         totalWords: 0,
+        selectedAnagrams: [],
         currentWord: '',
         currentAnagrams: [],
         guessedAnagrams: [],
@@ -74,7 +77,7 @@ import anagrams from '@/data/anagrams.js';
     methods: {
       startGame() {
         
-        this.selectedAnagrams = this.shuffleArray(this.selectedAnagrams);
+        this.selectedAnagrams = this.shuffleArray(this.clonedAnagramsToGuess);
         
         this.currentAnagrams = this.selectedAnagrams.shift();
 
@@ -142,9 +145,6 @@ import anagrams from '@/data/anagrams.js';
         
         console.log(response);
       },
-    },
-    beforeMount() {
-      this.selectedAnagrams = [...anagrams[this.wordLength]];
     },
     mounted() {
       this.startGame();

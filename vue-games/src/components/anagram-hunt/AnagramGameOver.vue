@@ -32,11 +32,12 @@
   export default {
     name: 'AnagramGameOver',
     props: {
-      score: Number
+      score: Number,
+      wordLength: Number,
     },
     methods: {
       restartGame() {
-        this.$emit('restart-game');
+        this.$emit('restart-game', this.wordLength);
       },
       backToConfig() {
         this.$emit('back-to-config');

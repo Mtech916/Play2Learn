@@ -3,11 +3,10 @@
     <div class="row"> 
       <div class="col-sm-6 offset-sm-3">
         <label for="word-length" class="pe-2">Word Length</label>
-        
         <input 
-        type="number" 
-        id="word-length" 
-        v-model="wordLength"
+          type="number" 
+          id="word-length" 
+          v-model="wordLength"
           name="word-length" 
           placeholder="ex. 3"
           >

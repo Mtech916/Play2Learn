@@ -8,9 +8,28 @@
     </div>
   </div>
 
-  <AnagramConfig v-if="!gameStarted" @start-game="startGame" />
-  <AnagramGamePlay v-else-if="gameStarted && !gameOver" :wordLength="wordLength" @end-game="onEndGame" @update-score="updateScore"/>
-  <AnagramGameOver v-else :score="score" @restart-game="restartGame" @back-to-config="backToConfig" />
+  <!-- Anagram Config -->
+  <AnagramConfig 
+    v-if="!gameStarted" 
+    @start-game="startGame" 
+  />
+
+  <!-- Anagram Play -->
+  <AnagramGamePlay 
+    v-else-if="gameStarted && !gameOver" 
+    :wordLength="wordLength" 
+    :anagramsToGuess="anagramsToGuess" 
+    @end-game="onEndGame" 
+    @update-score="updateScore"
+  />
+
+  <!-- Anagram Game Over -->
+  <AnagramGameOver 
+    v-else :score="score" 
+    :wordLength="wordLength" 
+    @restart-game="restartGame" 
+    @back-to-config="backToConfig" 
+  />
 
 </template>
 
@@ -34,13 +53,14 @@ import anagrams from '../data/anagrams.js';
         gameStarted: false,
         gameOver: false,
         wordLength: null,
-        selectedAnagrams: [],
+        anagramsToGuess: [],
         score: 0,
       }
     },
     methods: {
       startGame(wordLength) {
         this.wordLength = wordLength;
+        this.anagramsToGuess = [...anagrams[this.wordLength]];
         this.gameStarted = true;
       },
       updateScore(newScore) {
@@ -49,9 +69,14 @@ import anagrams from '../data/anagrams.js';
       onEndGame() {
       this.gameOver = true;
       },
-      restartGame() {
+      resetAnagrams() {
+        this.anagramsToGuess = [];
+      },
+      restartGame(wordLength) {
         this.score = 0;
-        this.selectedAnagrams = [...anagrams[this.wordLength]];
+        this.resetAnagrams();
+        this.wordLength = wordLength;
+        this.anagramsToGuess = [...anagrams[this.wordLength]];
         this.gameStarted = true;
         this.gameOver = false;
       },

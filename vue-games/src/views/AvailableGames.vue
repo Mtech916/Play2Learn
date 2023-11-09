@@ -8,11 +8,23 @@
       </div>
       
       <div class="col-md-6 mt-3 my-md-5">
-        <h5 class="d-flex justify-content-center align-items-center">Hunt your mind and rearrange the letters to create different words. How many can you guess in 60 seconds?</h5>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h5 class="badge bg-primary">
+            Anagram Hunt
+          </h5>
+          <p class="fw-bold">
+            Unleash your word skills in our thrilling Anagram Hunt! Solve brain-twisting word puzzles in a race against time. Can you unscramble them all?
+          </p>
+        </div>
         <div class="row">
           <div class="col-6 offset-3">
             <div class="d-grid">
-              <a href="/games/anagram-hunt/" class="btn btn--raised">Play</a>
+              <a 
+                href="/games/anagram-hunt/"
+                class="btn btn--raised rounded-3"
+              >
+                Play
+              </a>
             </div>
           </div>
         </div>
@@ -25,18 +37,27 @@
           </div>
         </div>
         <div class="col-md-6 mt-3 my-md-5">
-          <h5 class="d-flex justify-content-center align-items-center">
-            You think your fast? ...well you only have 30 seconds, better make'em count. P.S. The math pun was for free!
-          </h5>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <h5 class="badge bg-primary">
+              Math Facts Practice
+            </h5>
+            <p class="fw-bold">
+              Sharpen your math prowess with our Math Facts Practice game. Challenge your number skills and beat the clock. Get ready to excel
+            </p>
+          </div>
           <div class="row">
             <div class="col-6 offset-3">
               <div class="d-grid">
-                <a href="/games/math-facts/" class="btn btn--raised">Play</a>
+                <a
+                  href="/games/math-facts/"  
+                  class="btn btn--raised rounded-3"
+                >
+                  Play
+                </a>
               </div>
             </div>
           </div>
         </div>
-  
       </div>
     </div>
   </div>

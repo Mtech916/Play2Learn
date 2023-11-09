@@ -9,7 +9,7 @@
     </div>
     <div class="container">
       <div class="row my-5">
-        <h2 class="text-center">coming soon!</h2>
+        <h3 class="text-center --ltr-spc">Questions or requests please email us <i class="fa-solid fa-arrow-down"></i></h3>
       </div>
     </div>
 </template>
@@ -31,9 +31,10 @@
 
 <style scoped>
 
-#home-view {
-  margin-bottom: 100px;
+.--ltr-spc {
+  letter-spacing: .015em;
 }
+
 
 @media (max-width: 760px) {
   #home-view {

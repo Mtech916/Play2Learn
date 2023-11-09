@@ -65,7 +65,11 @@ a, input, textarea, button, select {
 #myaccount_container,
 .--custom-mb,
 #leaderboard-container,
-#myscores_container {
+#myscores_container,
+#game_review_form-container,
+#gamereview_detail-container,
+#game_score_detail-container,
+#contact_form-container {
   margin-bottom: 75px;
 }
 
@@ -136,8 +140,8 @@ a, input, textarea, button, select {
   bottom: 20px;
   right: 20px;
   opacity: 0;
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   border: none;
   border-radius: 50%;
   outline: none;
@@ -221,6 +225,8 @@ a.trash-color {
   background-color: pink;
   color: darkred;
 }
+
+@media(min-width: )
 
 @media (prefers-reduced-motion: no-preference) {
   html {

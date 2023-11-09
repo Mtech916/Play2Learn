@@ -67,7 +67,7 @@ import anagrams from '@/data/anagrams.js';
         guessedAnagrams: [],
         userInput: '',
         score: 0,
-        timeLeft: 3,
+        timeLeft: 60,
         timer: null,
       };
     },
@@ -118,7 +118,7 @@ import anagrams from '@/data/anagrams.js';
         const lowerCaseInput = this.userInput.toLowerCase().trim();
 
         if (this.currentAnagrams.includes(lowerCaseInput)) {
-          this.score++;
+          this.score += 3;
           this.$emit('update-score', this.score);
 
           this.currentAnagrams = this.currentAnagrams.filter(anagram => anagram !== lowerCaseInput);

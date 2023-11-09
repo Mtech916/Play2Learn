@@ -20,7 +20,7 @@
             <li>Choose Word Length.</li>
             <li>Press Play!</li>
             <li><span class="fs-5 fw-bold text-primary">60</span> seconds on the Clock</li>
-            <li>Score <span class="fs-5 fw-bold text-success">5</span> points per correct answer</li>
+            <li>Score <span class="fs-5 fw-bold text-success">3</span> points per correct answer</li>
             <li>Highest Scores earn <span class="fw-semibold fs-5">LeaderBoard</span> status</li>
           </ol>
         </div>

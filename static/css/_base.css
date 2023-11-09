@@ -62,6 +62,7 @@ a, input, textarea, button, select {
 /* Container's margin-bottom */
 
 #login-container,
+#registration-container,
 #myaccount_container,
 .--custom-mb,
 #leaderboard-container,

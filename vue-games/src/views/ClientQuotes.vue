@@ -20,7 +20,7 @@
                 {{ review.review }}
               </q>
               <p class="fw-bold text-uppercase pt-2">
-                {{ review.username }}
+                <span class="text-success">{{ review.username }}</span>
               </p>
             </blockquote>
           </div>

@@ -1,0 +1,2107 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2023-11-10T02:48:23.997Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "Gamer Admin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2023-11-10T02:48:45.099Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bill Diebler (b.Diebler)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2023-11-10T02:48:56.237Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "6",
+    "object_repr": "Brooklyn Grace (b.grace)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add email address",
+    "content_type": 6,
+    "codename": "add_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change email address",
+    "content_type": 6,
+    "codename": "change_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete email address",
+    "content_type": 6,
+    "codename": "delete_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view email address",
+    "content_type": 6,
+    "codename": "view_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add email confirmation",
+    "content_type": 7,
+    "codename": "add_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change email confirmation",
+    "content_type": 7,
+    "codename": "change_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete email confirmation",
+    "content_type": 7,
+    "codename": "delete_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view email confirmation",
+    "content_type": 7,
+    "codename": "view_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add social account",
+    "content_type": 8,
+    "codename": "add_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change social account",
+    "content_type": 8,
+    "codename": "change_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete social account",
+    "content_type": 8,
+    "codename": "delete_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view social account",
+    "content_type": 8,
+    "codename": "view_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add social application",
+    "content_type": 9,
+    "codename": "add_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change social application",
+    "content_type": 9,
+    "codename": "change_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete social application",
+    "content_type": 9,
+    "codename": "delete_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view social application",
+    "content_type": 9,
+    "codename": "view_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add social application token",
+    "content_type": 10,
+    "codename": "add_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change social application token",
+    "content_type": 10,
+    "codename": "change_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete social application token",
+    "content_type": 10,
+    "codename": "delete_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view social application token",
+    "content_type": 10,
+    "codename": "view_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add game score",
+    "content_type": 11,
+    "codename": "add_gamescore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change game score",
+    "content_type": 11,
+    "codename": "change_gamescore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete game score",
+    "content_type": 11,
+    "codename": "delete_gamescore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view game score",
+    "content_type": 11,
+    "codename": "view_gamescore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Contact Us",
+    "content_type": 12,
+    "codename": "add_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Contact Us",
+    "content_type": 12,
+    "codename": "change_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Contact Us",
+    "content_type": 12,
+    "codename": "delete_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Contact Us",
+    "content_type": 12,
+    "codename": "view_contactus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add game review",
+    "content_type": 13,
+    "codename": "add_gamereview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change game review",
+    "content_type": 13,
+    "codename": "change_gamereview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete game review",
+    "content_type": 13,
+    "codename": "delete_gamereview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view game review",
+    "content_type": 13,
+    "codename": "view_gamereview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 14,
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 14,
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 14,
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 14,
+    "codename": "view_customuser"
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Gamer Admin",
+    "permissions": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56
+    ]
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "account",
+    "model": "emailaddress"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "account",
+    "model": "emailconfirmation"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialaccount"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialapp"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialtoken"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "games",
+    "model": "gamescore"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "pages",
+    "model": "contactus"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "reviews",
+    "model": "gamereview"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "users",
+    "model": "customuser"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "e44739y2hcok2tgv9a9x8ng2zzzm9g0p",
+  "fields": {
+    "session_data": ".eJxVjksOgzAMBe-SdYWcQH7s2otEJjgiKgoVCVKrqndvQGxYep49z1_mMuUcl-To_Yrrh_VwYw63Mrkt0-riyHom2IUN6J-U9gDneccNer9sqTTHzhnn5l4nSiV6LLXgcV5dVBPmqXrIwIhKKaGsJBFG1RouMXRegm55i6YSoNAZGFAAaMGDbEEDJwtGCVml5wuH-yyl0WFhPVfWStNpYRtQRnDJf39kXFBl:1r1Hcv:7oBPiUmjlQ-RlQxCI7FpTakzhJB4i5gc8aBPwSKyUJs",
+    "expire_date": "2023-11-24T02:52:09.117Z"
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "email": "agenthiggins@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "email": "shredtechfit@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "game": "MATH",
+    "score": 18,
+    "word_length": null,
+    "total_words": null,
+    "operation": "-",
+    "max_number": 7,
+    "slug": "mtech916-played-the-math-facts-practice-game-and-s",
+    "created": "2023-10-07T23:19:48.958Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "game": "MATH",
+    "score": 12,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 10,
+    "slug": "bdiebler-played-the-math-facts-practice-game-and-s",
+    "created": "2023-10-12T20:48:26.551Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "game": "ANAGRAM",
+    "score": 12,
+    "word_length": "5",
+    "total_words": 24,
+    "operation": null,
+    "max_number": null,
+    "slug": "mtech916-played-the-math-facts-practice-snivsogrrb",
+    "created": "2023-10-19T22:53:22.554Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "game": "MATH",
+    "score": 18,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 6,
+    "slug": "mtech916-played-the-math-facts-practice-jmuufgnzqt",
+    "created": "2023-10-20T01:04:02.472Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "game": "MATH",
+    "score": 14,
+    "word_length": null,
+    "total_words": null,
+    "operation": "x",
+    "max_number": 5,
+    "slug": "mtech916-played-the-math-facts-practice-whzlhqoblt",
+    "created": "2023-10-20T23:04:57.050Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "game": "ANAGRAM",
+    "score": 30,
+    "word_length": "3",
+    "total_words": 40,
+    "operation": null,
+    "max_number": null,
+    "slug": "jmcclane-played-the-anagram-hunt-game-and-scored-3",
+    "created": "2023-11-10T00:35:47.685Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 7,
+  "fields": {
+    "user": 3,
+    "game": "MATH",
+    "score": 21,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 10,
+    "slug": "jmcclane-played-the-math-facts-practice-game-and-s",
+    "created": "2023-11-10T00:36:40.134Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 8,
+  "fields": {
+    "user": 4,
+    "game": "MATH",
+    "score": 15,
+    "word_length": null,
+    "total_words": null,
+    "operation": "x",
+    "max_number": 10,
+    "slug": "mrwick-played-the-math-facts-practice-game-and-sco",
+    "created": "2023-11-10T00:37:25.485Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 9,
+  "fields": {
+    "user": 4,
+    "game": "ANAGRAM",
+    "score": 12,
+    "word_length": "8",
+    "total_words": 24,
+    "operation": null,
+    "max_number": null,
+    "slug": "mrwick-played-the-anagram-hunt-game-and-scored-12",
+    "created": "2023-11-10T00:37:59.655Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 10,
+  "fields": {
+    "user": 4,
+    "game": "ANAGRAM",
+    "score": 27,
+    "word_length": "4",
+    "total_words": 33,
+    "operation": null,
+    "max_number": null,
+    "slug": "mrwick-played-the-anagram-hunt-game-and-scored-27",
+    "created": "2023-11-10T00:38:37.172Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 11,
+  "fields": {
+    "user": 2,
+    "game": "ANAGRAM",
+    "score": 18,
+    "word_length": "5",
+    "total_words": 25,
+    "operation": null,
+    "max_number": null,
+    "slug": "bdiebler-played-the-anagram-hunt-game-and-scored-1",
+    "created": "2023-11-10T00:39:21.422Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "game": "MATH",
+    "score": 33,
+    "word_length": null,
+    "total_words": null,
+    "operation": "/",
+    "max_number": 3,
+    "slug": "bdiebler-played-the-math-facts-practice-kcuatzyaad",
+    "created": "2023-11-10T00:40:14.419Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 13,
+  "fields": {
+    "user": 6,
+    "game": "ANAGRAM",
+    "score": 36,
+    "word_length": "6",
+    "total_words": 33,
+    "operation": null,
+    "max_number": null,
+    "slug": "bgrace-played-the-anagram-hunt-game-and-scored-36",
+    "created": "2023-11-10T00:40:36.380Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 14,
+  "fields": {
+    "user": 6,
+    "game": "MATH",
+    "score": 17,
+    "word_length": null,
+    "total_words": null,
+    "operation": "-",
+    "max_number": 5,
+    "slug": "bgrace-played-the-math-facts-practice-game-and-sco",
+    "created": "2023-11-10T00:41:10.363Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 15,
+  "fields": {
+    "user": 13,
+    "game": "ANAGRAM",
+    "score": 12,
+    "word_length": "4",
+    "total_words": 17,
+    "operation": null,
+    "max_number": null,
+    "slug": "bmartin-played-the-anagram-hunt-game-and-scored-12",
+    "created": "2023-11-10T00:41:48.341Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 16,
+  "fields": {
+    "user": 13,
+    "game": "MATH",
+    "score": 22,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 2,
+    "slug": "bmartin-played-the-math-facts-practice-game-and-sc",
+    "created": "2023-11-10T00:42:05.163Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 17,
+  "fields": {
+    "user": 5,
+    "game": "ANAGRAM",
+    "score": 39,
+    "word_length": "3",
+    "total_words": 45,
+    "operation": null,
+    "max_number": null,
+    "slug": "dlightman-played-the-anagram-hunt-game-and-scored",
+    "created": "2023-11-10T00:42:39.096Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 18,
+  "fields": {
+    "user": 5,
+    "game": "MATH",
+    "score": 20,
+    "word_length": null,
+    "total_words": null,
+    "operation": "/",
+    "max_number": 13,
+    "slug": "dlightman-played-the-math-facts-practice-game-and",
+    "created": "2023-11-10T00:43:11.041Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 19,
+  "fields": {
+    "user": 11,
+    "game": "ANAGRAM",
+    "score": 45,
+    "word_length": "5",
+    "total_words": 50,
+    "operation": null,
+    "max_number": null,
+    "slug": "ibruiser-played-the-anagram-hunt-game-and-scored-4",
+    "created": "2023-11-10T00:43:45.398Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 20,
+  "fields": {
+    "user": 11,
+    "game": "ANAGRAM",
+    "score": 18,
+    "word_length": "3",
+    "total_words": 6,
+    "operation": null,
+    "max_number": null,
+    "slug": "ibruiser-played-the-anagram-hunt-game-and-scored-1",
+    "created": "2023-11-10T00:44:55.653Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 21,
+  "fields": {
+    "user": 11,
+    "game": "MATH",
+    "score": 29,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 10,
+    "slug": "ibruiser-played-the-math-facts-practice-game-and-s",
+    "created": "2023-11-10T00:45:26.594Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 22,
+  "fields": {
+    "user": 14,
+    "game": "ANAGRAM",
+    "score": 21,
+    "word_length": "5",
+    "total_words": 27,
+    "operation": null,
+    "max_number": null,
+    "slug": "jcanipe-played-the-anagram-hunt-game-and-scored-21",
+    "created": "2023-11-10T01:01:37.354Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 23,
+  "fields": {
+    "user": 14,
+    "game": "MATH",
+    "score": 35,
+    "word_length": null,
+    "total_words": null,
+    "operation": "-",
+    "max_number": 5,
+    "slug": "jcanipe-played-the-math-facts-practice-game-and-sc",
+    "created": "2023-11-10T01:02:15.065Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 24,
+  "fields": {
+    "user": 9,
+    "game": "ANAGRAM",
+    "score": 24,
+    "word_length": "6",
+    "total_words": 29,
+    "operation": null,
+    "max_number": null,
+    "slug": "jwelch-played-the-anagram-hunt-game-and-scored-24",
+    "created": "2023-11-10T01:02:43.996Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 25,
+  "fields": {
+    "user": 9,
+    "game": "MATH",
+    "score": 27,
+    "word_length": null,
+    "total_words": null,
+    "operation": "/",
+    "max_number": 9,
+    "slug": "jwelch-played-the-math-facts-practice-game-and-sco",
+    "created": "2023-11-10T01:03:10.941Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 26,
+  "fields": {
+    "user": 10,
+    "game": "ANAGRAM",
+    "score": 33,
+    "word_length": "7",
+    "total_words": 39,
+    "operation": null,
+    "max_number": null,
+    "slug": "lcroft-played-the-anagram-hunt-game-and-scored-33",
+    "created": "2023-11-10T01:03:44.647Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 27,
+  "fields": {
+    "user": 10,
+    "game": "MATH",
+    "score": 26,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 10,
+    "slug": "lcroft-played-the-math-facts-practice-game-and-sco",
+    "created": "2023-11-10T01:04:08.869Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 28,
+  "fields": {
+    "user": 7,
+    "game": "ANAGRAM",
+    "score": 48,
+    "word_length": "8",
+    "total_words": 50,
+    "operation": null,
+    "max_number": null,
+    "slug": "nnorth-played-the-anagram-hunt-game-and-scored-48",
+    "created": "2023-11-10T01:04:54.431Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 29,
+  "fields": {
+    "user": 7,
+    "game": "MATH",
+    "score": 24,
+    "word_length": null,
+    "total_words": null,
+    "operation": "-",
+    "max_number": 10,
+    "slug": "nnorth-played-the-math-facts-practice-game-and-sco",
+    "created": "2023-11-10T01:05:15.581Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 30,
+  "fields": {
+    "user": 12,
+    "game": "ANAGRAM",
+    "score": 15,
+    "word_length": "3",
+    "total_words": 9,
+    "operation": null,
+    "max_number": null,
+    "slug": "rholder-played-the-anagram-hunt-game-and-scored-15",
+    "created": "2023-11-10T01:05:36.059Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 31,
+  "fields": {
+    "user": 12,
+    "game": "MATH",
+    "score": 21,
+    "word_length": null,
+    "total_words": null,
+    "operation": "x",
+    "max_number": 10,
+    "slug": "rholder-played-the-math-facts-practice-game-and-sc",
+    "created": "2023-11-10T01:05:53.224Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 32,
+  "fields": {
+    "user": 15,
+    "game": "ANAGRAM",
+    "score": 18,
+    "word_length": "4",
+    "total_words": 23,
+    "operation": null,
+    "max_number": null,
+    "slug": "tarnold-played-the-anagram-hunt-game-and-scored-18",
+    "created": "2023-11-10T01:06:13.438Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 33,
+  "fields": {
+    "user": 15,
+    "game": "MATH",
+    "score": 19,
+    "word_length": null,
+    "total_words": null,
+    "operation": "/",
+    "max_number": 11,
+    "slug": "tarnold-played-the-math-facts-practice-game-and-sc",
+    "created": "2023-11-10T01:06:41.274Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 34,
+  "fields": {
+    "user": 8,
+    "game": "ANAGRAM",
+    "score": 27,
+    "word_length": "5",
+    "total_words": 35,
+    "operation": null,
+    "max_number": null,
+    "slug": "wmay-played-the-anagram-hunt-game-and-scored-27",
+    "created": "2023-11-10T01:06:59.173Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 35,
+  "fields": {
+    "user": 8,
+    "game": "MATH",
+    "score": 21,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 10,
+    "slug": "wmay-played-the-math-facts-practice-game-and-score",
+    "created": "2023-11-10T01:07:13.740Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 36,
+  "fields": {
+    "user": 8,
+    "game": "ANAGRAM",
+    "score": 15,
+    "word_length": "3",
+    "total_words": 9,
+    "operation": null,
+    "max_number": null,
+    "slug": "wmay-played-the-anagram-hunt-game-and-scored-15",
+    "created": "2023-11-10T01:07:44.286Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 37,
+  "fields": {
+    "user": 15,
+    "game": "MATH",
+    "score": 14,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 15,
+    "slug": "tarnold-played-the-math-facts-practice--znsktklatf",
+    "created": "2023-11-10T01:08:02.783Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 38,
+  "fields": {
+    "user": 12,
+    "game": "ANAGRAM",
+    "score": 18,
+    "word_length": "7",
+    "total_words": 27,
+    "operation": null,
+    "max_number": null,
+    "slug": "rholder-played-the-anagram-hunt-game-and-scored-18",
+    "created": "2023-11-10T01:08:35.047Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 39,
+  "fields": {
+    "user": 7,
+    "game": "MATH",
+    "score": 14,
+    "word_length": null,
+    "total_words": null,
+    "operation": "/",
+    "max_number": 13,
+    "slug": "nnorth-played-the-math-facts-practice-g-qxhylwzxfq",
+    "created": "2023-11-10T01:09:14.324Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 40,
+  "fields": {
+    "user": 10,
+    "game": "ANAGRAM",
+    "score": 9,
+    "word_length": "8",
+    "total_words": 15,
+    "operation": null,
+    "max_number": null,
+    "slug": "lcroft-played-the-anagram-hunt-game-and-scored-9",
+    "created": "2023-11-10T01:09:33.176Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 41,
+  "fields": {
+    "user": 9,
+    "game": "MATH",
+    "score": 12,
+    "word_length": null,
+    "total_words": null,
+    "operation": "x",
+    "max_number": 21,
+    "slug": "jwelch-played-the-math-facts-practice-g-shjktbgeaa",
+    "created": "2023-11-10T01:09:50.896Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 42,
+  "fields": {
+    "user": 14,
+    "game": "ANAGRAM",
+    "score": 24,
+    "word_length": "4",
+    "total_words": 20,
+    "operation": null,
+    "max_number": null,
+    "slug": "jcanipe-played-the-anagram-hunt-game-and-scored-24",
+    "created": "2023-11-10T01:10:24.704Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 43,
+  "fields": {
+    "user": 11,
+    "game": "ANAGRAM",
+    "score": 6,
+    "word_length": "8",
+    "total_words": 27,
+    "operation": null,
+    "max_number": null,
+    "slug": "ibruiser-played-the-anagram-hunt-game-and-scored-6",
+    "created": "2023-11-10T01:10:55.279Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 44,
+  "fields": {
+    "user": 5,
+    "game": "MATH",
+    "score": 16,
+    "word_length": null,
+    "total_words": null,
+    "operation": "+",
+    "max_number": 50,
+    "slug": "dlightman-played-the-math-facts-practic-dvctzmuoqx",
+    "created": "2023-11-10T01:11:18.762Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 45,
+  "fields": {
+    "user": 13,
+    "game": "ANAGRAM",
+    "score": 9,
+    "word_length": "7",
+    "total_words": 18,
+    "operation": null,
+    "max_number": null,
+    "slug": "bmartin-played-the-anagram-hunt-game-and-scored-9",
+    "created": "2023-11-10T01:11:39.401Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 46,
+  "fields": {
+    "user": 6,
+    "game": "MATH",
+    "score": 23,
+    "word_length": null,
+    "total_words": null,
+    "operation": "x",
+    "max_number": 15,
+    "slug": "bgrace-played-the-math-facts-practice-g-exffjebsdz",
+    "created": "2023-11-10T01:11:57.473Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 47,
+  "fields": {
+    "user": 2,
+    "game": "ANAGRAM",
+    "score": 15,
+    "word_length": "3",
+    "total_words": 9,
+    "operation": null,
+    "max_number": null,
+    "slug": "bdiebler-played-the-anagram-hunt-game-a-yyykfursob",
+    "created": "2023-11-10T01:12:17.967Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 48,
+  "fields": {
+    "user": 4,
+    "game": "MATH",
+    "score": 25,
+    "word_length": null,
+    "total_words": null,
+    "operation": "-",
+    "max_number": 7,
+    "slug": "mrwick-played-the-math-facts-practice-g-vlwjitelgc",
+    "created": "2023-11-10T01:12:38.795Z"
+  }
+},
+{
+  "model": "games.gamescore",
+  "pk": 49,
+  "fields": {
+    "user": 3,
+    "game": "ANAGRAM",
+    "score": 12,
+    "word_length": "5",
+    "total_words": 15,
+    "operation": null,
+    "max_number": null,
+    "slug": "jmcclane-played-the-anagram-hunt-game-and-scored-1",
+    "created": "2023-11-10T01:12:53.914Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "game": "MATH",
+    "rating": 5,
+    "review": "So This is fun for about 30 sec...:-). Ok, maybe it's kinda fun for several rounds of 30 secs...",
+    "is_featured": true,
+    "slug": "review-by-mtech916",
+    "created": "2023-10-17",
+    "updated": "2023-11-10T00:27:01.008Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "game": "ANAGRAM",
+    "rating": 4,
+    "review": "After the 3 letters words, good luck! They are so difficult!",
+    "is_featured": false,
+    "slug": "review-by-mtech916-lclzsumjev",
+    "created": "2023-10-20",
+    "updated": "2023-10-23T22:58:01.613Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "game": "ANAGRAM",
+    "rating": 3,
+    "review": "Holy cow, I thought I was literate, but not after playing this game.",
+    "is_featured": false,
+    "slug": "review-by-bdiebler",
+    "created": "2023-10-23",
+    "updated": "2023-11-10T00:19:46.126Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "game": "MATH",
+    "rating": 4,
+    "review": "This keeps me sharp... I like being able to do simple math in my head!",
+    "is_featured": false,
+    "slug": "review-by-bdiebler-dbdwguhbcc",
+    "created": "2023-10-23",
+    "updated": "2023-11-10T00:19:36.165Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "game": "MATH",
+    "rating": 5,
+    "review": "I'm way better at addition than I am at subtraction!",
+    "is_featured": false,
+    "slug": "5-star-review-by-mtech916",
+    "created": "2023-11-05",
+    "updated": "2023-11-05T05:16:43.621Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "game": "ANAGRAM",
+    "rating": 5,
+    "review": "Yippee-ki-yay, this maverick just played Anagram Hunt. It's the best game ever invented!",
+    "is_featured": true,
+    "slug": "5-star-review-by-jmcclane",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:11:47.589Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 7,
+  "fields": {
+    "user": 4,
+    "game": "MATH",
+    "rating": 5,
+    "review": "It was more fun playing your games than filming all my awesome movies!",
+    "is_featured": true,
+    "slug": "5-star-review-by-mrwick",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:13:07.724Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 8,
+  "fields": {
+    "user": 5,
+    "game": "ANAGRAM",
+    "rating": 5,
+    "review": "Play2Learn called me and asked, Want to play a game? I responded: Joshua is that you? Computer: No, its Math Facts Practice...Dun dun duuun!",
+    "is_featured": true,
+    "slug": "5-star-review-by-dlightman",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:13:00.233Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 9,
+  "fields": {
+    "user": 6,
+    "game": "ANAGRAM",
+    "rating": 5,
+    "review": "Anagram Hunt is pure genius! The game's creativity in word combinations is unmatched.",
+    "is_featured": true,
+    "slug": "5-star-review-by-bgrace",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:14:23.598Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 10,
+  "fields": {
+    "user": 12,
+    "game": "ANAGRAM",
+    "rating": 2,
+    "review": "Frustrating experience. The word scrambles were challenging to the point of being irritating.",
+    "is_featured": false,
+    "slug": "2-star-review-by-rholder",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:14:58.957Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 11,
+  "fields": {
+    "user": 13,
+    "game": "ANAGRAM",
+    "rating": 2,
+    "review": "Anagram Hunt left me scratching my head. The difficulty level seemed a bit too high.",
+    "is_featured": false,
+    "slug": "2-star-review-by-bmartin",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:15:23.384Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 12,
+  "fields": {
+    "user": 11,
+    "game": "ANAGRAM",
+    "rating": 3,
+    "review": "Surprisingly engaging! The word puzzles provided a good mental workout without overwhelming difficulty.",
+    "is_featured": true,
+    "slug": "3-star-review-by-ibruiser",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:16:56.508Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 13,
+  "fields": {
+    "user": 14,
+    "game": "ANAGRAM",
+    "rating": 3,
+    "review": "Wasn't expecting much, but Anagram Hunt turned out to be a pleasant surprise. A decent brain teaser.",
+    "is_featured": false,
+    "slug": "3-star-review-by-jcanipe",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:17:25.211Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 14,
+  "fields": {
+    "user": 9,
+    "game": "ANAGRAM",
+    "rating": 4,
+    "review": "Happily challenging! Anagram Hunt struck the right balance between difficulty and enjoyment.",
+    "is_featured": false,
+    "slug": "4-star-review-by-jwelch",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:17:47.708Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 15,
+  "fields": {
+    "user": 10,
+    "game": "ANAGRAM",
+    "rating": 4,
+    "review": "Found joy in unscrambling words! Anagram Hunt made me feel accomplished without being too easy.",
+    "is_featured": false,
+    "slug": "4-star-review-by-lcroft",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:18:32.640Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 16,
+  "fields": {
+    "user": 7,
+    "game": "ANAGRAM",
+    "rating": 5,
+    "review": "Exciting wordplay! Anagram Hunt is an absolute delight, and the challenges keep me coming back for more.",
+    "is_featured": false,
+    "slug": "5-star-review-by-nnorth",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:20:40.041Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 17,
+  "fields": {
+    "user": 15,
+    "game": "MATH",
+    "rating": 2,
+    "review": "Frustrated with math facts. The time pressure made it more stressful than enjoyable.",
+    "is_featured": false,
+    "slug": "2-star-review-by-tarnold",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:21:55.150Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 18,
+  "fields": {
+    "user": 8,
+    "game": "MATH",
+    "rating": 5,
+    "review": "Excited about math! Math Facts Practice is a fantastic way to brush up on essential skills.",
+    "is_featured": true,
+    "slug": "5-star-review-by-wmay",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:22:31.441Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 19,
+  "fields": {
+    "user": 9,
+    "game": "MATH",
+    "rating": 2,
+    "review": "Not a fan of Math Facts Practice. The format felt monotonous, and the timer added unnecessary stress.",
+    "is_featured": false,
+    "slug": "2-star-review-by-jwelch",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:22:55.659Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 20,
+  "fields": {
+    "user": 6,
+    "game": "MATH",
+    "rating": 3,
+    "review": "Pleasantly surprised by Math Facts Practice! The variety in questions kept me engaged.",
+    "is_featured": false,
+    "slug": "3-star-review-by-bgrace",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:23:12.968Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 21,
+  "fields": {
+    "user": 13,
+    "game": "MATH",
+    "rating": 3,
+    "review": "Math Facts Practice exceeded my expectations. The timed aspect added a new layer of challenge.",
+    "is_featured": false,
+    "slug": "3-star-review-by-bmartin",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:24:03.202Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 22,
+  "fields": {
+    "user": 11,
+    "game": "MATH",
+    "rating": 4,
+    "review": "Happy with Math Facts Practice. The interactive format made learning math facts enjoyable.",
+    "is_featured": false,
+    "slug": "4-star-review-by-ibruiser",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:24:32.306Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 23,
+  "fields": {
+    "user": 14,
+    "game": "MATH",
+    "rating": 5,
+    "review": "Math Facts Practice is a winner! It turned what could be a dull task into an entertaining challenge.",
+    "is_featured": true,
+    "slug": "5-star-review-by-jcanipe",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:24:59.550Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 24,
+  "fields": {
+    "user": 10,
+    "game": "MATH",
+    "rating": 5,
+    "review": "Math Facts Practice is a game-changer! It makes learning math facts fun and rewarding.",
+    "is_featured": true,
+    "slug": "5-star-review-by-lcroft",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:25:23.169Z"
+  }
+},
+{
+  "model": "reviews.gamereview",
+  "pk": 25,
+  "fields": {
+    "user": 7,
+    "game": "MATH",
+    "rating": 5,
+    "review": "So This is fun for about 30 sec...:-). Ok, maybe it's kinda fun for several rounds of 30 secs...",
+    "is_featured": true,
+    "slug": "5-star-review-by-nnorth-jvtdinevjw",
+    "created": "2023-11-10",
+    "updated": "2023-11-10T00:27:34.790Z"
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$MMtuNJ4V5ci6Q3a3LAxshe$TMTHAvYmMkkxUWGwiFyHK4LYpQnFb4zm/jlsiAlwbGQ=",
+    "last_login": "2023-11-10T02:43:17.139Z",
+    "is_superuser": true,
+    "username": "mtech916",
+    "first_name": "Matt",
+    "last_name": "Higgins",
+    "email": "agenthiggins@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-10-05T19:58:40Z",
+    "dob": "1985-01-03",
+    "avatar": "avatars/GlitchandI.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$2lsusyZxYsRbhqoQpjQKdo$StvWhzHeSEIY5eAkLowrsHU6gtKpqPD7k89fAbWjvEg=",
+    "last_login": "2023-11-10T02:52:09.066Z",
+    "is_superuser": false,
+    "username": "b.Diebler",
+    "first_name": "Bill",
+    "last_name": "Diebler",
+    "email": "shredtechfit@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-10-05T20:17:12Z",
+    "dob": "1968-06-30",
+    "avatar": "avatars/hard_hat.jpg",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$7kqMif2qZCBhhl8fli1e5z$GQV/zaZdSHZwII1eOx8wENBhRft3Q7XEypzxW1yYxu4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "J.McClane",
+    "first_name": "John",
+    "last_name": "McClane",
+    "email": "john.mcclane@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:11:25Z",
+    "dob": "1980-11-09",
+    "avatar": "avatars/bald_guy.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$G2DTmHb0wLOkmyXNPftnv3$n+Q0skdm48YEEygDrgmGz1DpgZvC/Actic4qtKZb8Uo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Mr.Wick",
+    "first_name": "John",
+    "last_name": "Wick",
+    "email": "john.wick@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:15:08Z",
+    "dob": "1977-10-09",
+    "avatar": "avatars/nice_hair.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Zl5xGPusmpj1YjPPEouphp$iDKnjSWXxGox3ZSzEINZQMGjcuynZBWZKPSm362Ne7Q=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "d.lightman",
+    "first_name": "David",
+    "last_name": "Lightman",
+    "email": "david.lightman@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:17:18Z",
+    "dob": "1985-09-03",
+    "avatar": "avatars/beanie_head.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$8x6FJFtK8LLjtGVtwwVN9F$wDOW2nhfu9jGEHK+IQ9WEW3gALbs938akmgCRwpo2YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "b.grace",
+    "first_name": "Brooklyn",
+    "last_name": "Grace",
+    "email": "brooklyn.grace@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:19:59Z",
+    "dob": "2003-11-03",
+    "avatar": "avatars/lady.jpg",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$EVPf3rYCf4uqOR43ZsbFDb$E0R5fNLP+wttY4EaEW2deMQ77SqIkKJGM/C+1m1fa04=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "n.north",
+    "first_name": "Nicole",
+    "last_name": "North",
+    "email": "nicole.north@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:24:20Z",
+    "dob": "1981-07-27",
+    "avatar": "avatars/smile_lady.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$3dyBek3pNzdoRK7rQesXN3$T7ADwXuxrK9oTuWFV7oZgx72bP5wkUgVIdCJb97D9UQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "w.may",
+    "first_name": "Winter",
+    "last_name": "May",
+    "email": "winter.may@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:27:04Z",
+    "dob": "2012-02-09",
+    "avatar": "avatars/young_lady.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$iBQ7gtqjEpaX9LwoXlyOZO$iKkMSk4+yeWfWAQ35qAzkTB6iRhLjPKI/S4O9UMwnl0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "j.welch",
+    "first_name": "Jack",
+    "last_name": "Welch",
+    "email": "jack.welch@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:29:15Z",
+    "dob": "1982-12-08",
+    "avatar": "avatars/green_hat.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$9P6hrDAhFca4lUiKZKZurb$kgp+eveEydqcm845mw8UTlc0pvYxxpVZefBwO3OGz00=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "l.croft",
+    "first_name": "Laura",
+    "last_name": "Croft",
+    "email": "laura.croft@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:33:27Z",
+    "dob": "1989-06-21",
+    "avatar": "avatars/croft_lady.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$T1aLpfbdr618ln9KeJ6K3e$kCUVxuae4pwJETDec01VgcTrl3cbwHj1M9PGLoQ/96s=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "i.bruiser",
+    "first_name": "Isabelle",
+    "last_name": "Bruiser",
+    "email": "isabelle.bruiser@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:37:11Z",
+    "dob": "2010-12-25",
+    "avatar": "avatars/bruiser_lady.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$A9Uuug7IKSY5mNGeMOz3EM$m2rLBzv2i4IoV6iXGwpgqATMLGf+omIzf6qu7sWU6qU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "r.holder",
+    "first_name": "Rebecca",
+    "last_name": "Holder",
+    "email": "rebecca.holder@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:40:12Z",
+    "dob": "2005-10-13",
+    "avatar": "avatars/hat_lady.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$dmVvbLWvWAKtJXF9C1zumU$NhNMmbBFzupwovhL9by0B8anrEPP13AUnDsxDb4hORE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "b.martin",
+    "first_name": "Bret",
+    "last_name": "Martin",
+    "email": "bret.martin@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:42:01Z",
+    "dob": "2000-04-09",
+    "avatar": "avatars/black_hat.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$NfGkXY0UI2Ij8jRD3txQh1$osDPzTvjaFtCWXt41lAb1WXMqgpWjbJQLnj5fbX6qKo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "j.canipe",
+    "first_name": "Jay",
+    "last_name": "Canipe",
+    "email": "jay.canipe@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:45:05Z",
+    "dob": "1991-05-04",
+    "avatar": "avatars/chef_hat.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 15,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$LIV9EmXmTibIrKy1MATw5B$XA52Hll0mr5RaX2hFCX5z+o0Xkvc6owEswp8gSQDRH4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "t.arnold",
+    "first_name": "Tom",
+    "last_name": "Arnold",
+    "email": "tom.arnold@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-09T23:47:26Z",
+    "dob": "1977-01-09",
+    "avatar": "avatars/top_hat.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

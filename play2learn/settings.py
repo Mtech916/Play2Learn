@@ -103,8 +103,12 @@ WSGI_APPLICATION = "play2learn.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "play2learn",
+        "USER": "matt",
+        "PASSWORD": "webD3vChuker",
+        "HOST": "localhost",
+        "PORT": 5432,
     }
 }
 

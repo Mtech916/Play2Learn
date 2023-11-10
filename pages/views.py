@@ -19,8 +19,8 @@ class ContactUsPageView(SuccessMessageMixin, CreateView):
         data = form.cleaned_data
         to = "agenthiggins@gmail.com"
         subject = "Website Visitor Message"
-        content = f"""<p>Attention Play2Learn Admin!</p>
-                <p>Website visitor contact message received:</p>
+        content = f"""<h1>Attention P2L Gamer Admin!</h1>
+                <p>Website visitor message received:</p>
                 <ol>"""
         for key, value in data.items():
             label = key.replace("_", " ").title()

@@ -33,8 +33,10 @@ class GameReviewPageView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         data = form.cleaned_data
         to = "agenthiggins@gmail.com"
         subject = "New Game Review"
-        content = f"""<h1>New Game Review Alert</h1>
-                <p>User game review received:</p>
+        content = f"""<h1>Attention P2L Gamer Admin!</h1>
+                <p>Player game review received:</p>
+                <p>Should this review be Featured?</p>
+                <p>Is Yes, then set is_featured to True in Gamer Admin.</p>
                 <ol style='list-style: none;'>"""
         for key, value in data.items():
             label = key.replace("_", " ").title()

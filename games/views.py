@@ -16,7 +16,7 @@ class AnagramHuntView(TemplateView):
 
 class GameScoreDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = GameScore
-    success_url = reverse_lazy("games:game-scores")
+    success_url = reverse_lazy("games:my-scores")
 
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)

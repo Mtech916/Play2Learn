@@ -16,8 +16,8 @@
 
 <script>
 
-  import ClientQuotes from './ClientQuotes.vue';
-  import AvailableGames from './AvailableGames.vue';
+  import ClientQuotes from '../components/ClientQuotes.vue';
+  import AvailableGames from '../components/AvailableGames.vue';
 
   export default {
     name: 'HomeView',

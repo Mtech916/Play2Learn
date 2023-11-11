@@ -10,7 +10,7 @@
                 Thank you for taking the time to explore our games. We hope you enjoy your experience today!
               </q>
               <p class="fw-bold text-uppercase pt-2">
-                Play2Learn Team
+                <span class="text-success">Play2Learn Team</span>
               </p>
             </blockquote>
           </div>

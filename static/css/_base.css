@@ -227,9 +227,7 @@ a.trash-color {
   color: darkred;
 }
 
-@media(min-width: )
-
-@media (prefers-reduced-motion: no-preference) {
+@media(prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }

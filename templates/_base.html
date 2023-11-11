@@ -216,7 +216,7 @@
             <div class="d-none d-sm-block col-sm-8 d-sm-flex">
               <img src="{% static 'images/logo.svg' %}" alt="Play 2 learn logo" width="45" height="43" class="" />
               <p class="text-black ps-2 p-2">
-                  Play2Learn &copy; {% now 'Y' %}
+                  <a href="{% url 'pages:homepage' %}" class="text-decoration-none text-black fw-bold">Play2Learn</a> &copy; {% now 'Y' %}
               </p>
             </div>
             <div class="col-12 d-flex justify-content-center col-sm-4 d-sm-flex justify-content-sm-end py-2">

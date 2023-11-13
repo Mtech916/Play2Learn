@@ -701,7 +701,7 @@
   "fields": {
     "user": 1,
     "email": "agenthiggins@gmail.com",
-    "verified": true,
+    "verified": false,
     "primary": true
   }
 },
@@ -711,7 +711,7 @@
   "fields": {
     "user": 2,
     "email": "shredtechfit@gmail.com",
-    "verified": true,
+    "verified": false,
     "primary": true
   }
 },

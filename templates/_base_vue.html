@@ -1,20 +1,3 @@
 {% extends '_base.html' %}
 
-{% block html %}
-  <html lang="en">
-    <head>
-      {% block head %}{{ block.super }}{% endblock %}
-    <script defer src="http://localhost:8080/js/chunk-vendors.js"></script><script defer src="http://localhost:8080/js/app.js"></script></head>
-    <body>
-    {% block body %}
-      {{ block.super }}
-      <noscript>
-        <strong>We're sorry but vue-games doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-      </noscript>
-
-      <div id="app"></div>
-      <!-- built files will be auto injected -->
-    {% endblock body %}
-    </body>
-  </html>
-{% endblock html %}
+{% block html %}<html lang="en"><head>{% block head %}{{ block.super }}{% endblock %}<script defer="defer" src="http://localhost:8080/js/chunk-vendors.99f518c5.js"></script><script defer="defer" src="http://localhost:8080/js/app.f1ad9f04.js"></script><link href="http://localhost:8080/css/app.a783ffc4.css" rel="stylesheet"></head><body>{% block body %} {{ block.super }}<noscript><strong>We're sorry but vue-games doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div>{% endblock body %}</body></html>{% endblock html %}

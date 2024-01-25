@@ -1,3 +1,4 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block html %}<html lang="en"><head>{% block head %}{{ block.super }}{% endblock %}<script defer="defer" src="{% static 'dist/js/chunk-vendors.99f518c5.js' %}"></script><script defer="defer" src="{% static 'dist/js/app.f1ad9f04.js' %}"></script><link href="{% static 'dist/css/app.a783ffc4.css' %}" rel="stylesheet"></head><body>{% block body %} {{ block.super }}<noscript><strong>We're sorry but vue-games doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div>{% endblock body %}</body></html>{% endblock html %}

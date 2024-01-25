@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-+!*s5bfo$n6q#mhkwtye*ryp7$-$l4bl(26v1-512i7btf$fmv"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["play2learn-6e8de4778938.herokuapp.com"]
 
 INTERNAL_IPS = [  # Necessary for the Debug Toolbar
     "127.0.0.1",
@@ -66,6 +66,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -100,17 +101,23 @@ WSGI_APPLICATION = "play2learn.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "play2learn",
-        "USER": "matt",
-        "PASSWORD": "webD3vChuker",
-        "HOST": "localhost",
-        "PORT": 5432,
+if os.environ.get("LOCAL_DEV", False):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "play2learn",
+            "USER": "postgres",
+            "PASSWORD": "webD3vChuker(3)",
+            "HOST": "localhost",
+            "PORT": 5432,
+        }
     }
-}
+else:
+    import dj_database_url
+
+    DATABASES = {
+        "default": dj_database_url.config(defualt=os.environ.get("DATABASE_URL"))
+    }
 
 # Email
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
@@ -180,6 +187,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"

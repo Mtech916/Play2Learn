@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 mt-5">
           <div class="image-container d-flex justify-content-center align-items-center">
-            <img src="/images/anagram-thumbnail.png" alt="Anagram Hunt Thumbnail" class="rounded-3" width="250"/>
+            <img src="public/images/anagram-thumbnail.png" alt="Anagram Hunt Thumbnail" class="rounded-3" width="250"/>
           </div>
       </div>
       
@@ -20,7 +20,7 @@
           <div class="col-6 offset-3">
             <div class="d-grid">
               <a 
-                href="/games/anagram-hunt/"
+                href="public/games/anagram-hunt/"
                 class="btn btn--raised rounded-3"
               >
                 Play

@@ -31,7 +31,7 @@
   
   <div class="col-md-6">
     <div class="card border-0 rounded-2">
-      <img src="/images/gamers_say.jpeg" alt="Gamer at Computer" class="rounded-3">
+      <img src="public/images/gamers_say.jpeg" alt="Gamer at Computer" class="rounded-3">
     </div>
   </div>
 

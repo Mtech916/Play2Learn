@@ -76,7 +76,15 @@ MIDDLEWARE = [
     # Third-party middleware
     "allauth.account.middleware.AccountMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "rollbar.contrib.django.middleware.RollbarNotifierMiddleware",
 ]
+
+ROLLBAR = {
+    "access_token": "b7c291e343644ea69902642181a9e466",
+    "environment": "development" if DEBUG else "production",
+    "code_version": "1.0",
+    "root": BASE_DIR,
+}
 
 ROOT_URLCONF = "play2learn.urls"
 

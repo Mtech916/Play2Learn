@@ -35,6 +35,23 @@
   letter-spacing: .015em;
 }
 
+/* Home page background */
+.available-games {
+  background: url('../../public/images/cool_bg.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.available-games::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
 
 @media (max-width: 760px) {
   #home-view {

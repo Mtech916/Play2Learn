@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 mt-5">
           <div class="image-container d-flex justify-content-center align-items-center">
-            <img src="public/images/anagram-thumbnail.png" alt="Anagram Hunt Thumbnail" class="rounded-3" width="250"/>
+            <img src="../../public/images/anagram-thumbnail.png" alt="Anagram Hunt Thumbnail" class="rounded-3" width="250"/>
           </div>
       </div>
       
@@ -33,7 +33,7 @@
       <div class="row mb-5">
         <div class="col-md-6 mt-5">
           <div class="image-container d-flex justify-content-center align-items-center">
-            <img src="/public/images/math-thumbnail.png" alt="Math Facts Thumbnail" class="rounded-3" width="250" />
+            <img src="../../public/images/math-thumbnail.png" alt="Math Facts Thumbnail" class="rounded-3" width="250" />
           </div>
         </div>
         <div class="col-md-6 mt-3 my-md-5">
@@ -68,3 +68,12 @@
     name: 'AvailableGames'
   }
 </script>
+
+<style scoped>
+
+.funky-bg {
+  z-index: 10;
+  color: #fff;
+}
+
+</style>

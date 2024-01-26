@@ -6,16 +6,11 @@ module.exports = {
   configureWebpack: {
     devServer: {
       devMiddleware: {
-        writeToDisk: true
-      }
-    }
-  }
+        writeToDisk: true,
+      },
+    },
+  },
 };
-
-
-
-
-
 
 // const { defineConfig } = require('@vue/cli-service')
 // module.exports = defineConfig({
